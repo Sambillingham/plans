@@ -1,4 +1,4 @@
-<%= @plan.inspect %>
+<!-- <%= @plan.inspect %> -->
 <% if @plan.funding == false %>
 
     <p>You need funding for your project</p>
@@ -18,6 +18,17 @@
 <% end %>
 
 <% if @plan.partnerships == "" %>
-    <p> You should consider making partnerships to increase connetivity in the area </p>
-<%end %>
+    <p> You should consider making partnerships with Architects, Residents, Community groups, and politicians to increase connetivity in the area </p>
+
+<% else %>
+
+    <% @partners.delete(@plan.partnerships) %>
+
+    You should consider making partnerships with<br>
+    <% @partners.each do |partner| %>
+        - <%= partner %>s<br>
+    <% end %>
+    as well as more <%= @plan.partnerships %>s
+
+<% end %>
 

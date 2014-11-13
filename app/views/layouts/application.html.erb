@@ -7,15 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <header>
-        <% flash.each do |k,v| %>
-            <div class="<%= k %>">
-                <p><%= v %></p>
-            </div>
-        <% end %>
-        <h1> Co Design Toolkit </h1>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Toolkit</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+          <h1> Co Design Toolkit </h1>
+          <% flash.each do |k,v| %>
+              <div class="alert alert-<%= k %>">
+                  <p><%= v %></p>
+              </div>
+          <% end %>
+        </div>
     </header>
-    <main class="content">
+
+    <main class="content container">
         <%= yield %>
     </main>
 

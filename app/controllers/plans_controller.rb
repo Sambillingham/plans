@@ -6,6 +6,7 @@ class PlansController < ApplicationController
     end
 
     def show
+        @partners = ["architect", "resident", "community group", "politician"]
         @plan = Plan.find(params[:id])
     end
 
