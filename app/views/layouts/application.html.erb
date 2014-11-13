@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+    <header>
+        <% flash.each do |k,v| %>
+            <div class="<%= k %>">
+                <p><%= v %></p>
+            </div>
+        <% end %>
+        <h1> Co Design Toolkit </h1>
+    </header>
+    <main class="content">
+        <%= yield %>
+    </main>
 
 </body>
 </html>

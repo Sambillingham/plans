@@ -1,0 +1,24 @@
+
+<%= simple_form_for @plan do |f| %>
+
+    <%= f.input :role, :collection => ["architect", "resident", "community group", "Politician"], label: 'What is your role?' %>
+
+    <div>
+    <label>What resources do you have avalible? Funding?</label>
+    <%= f.collection_radio_buttons :funding, [[true, 'Yes'] ,[false, 'No']], :first, :last %>
+    </div>
+
+    <label>What resources do you have avalible? People?</label>
+    <%= f.collection_radio_buttons :resources, [[true, 'Yes'] ,[false, 'No']], :first, :last %>
+
+    <div>
+    <label>What resources do you have avalible? Space?</label>
+    <%= f.collection_radio_buttons :space, [[true, 'Yes'] ,[false, 'No']], :first, :last %>
+    </div>
+
+    <div>
+    <%= f.input :partnerships, :collection => ["architect", "resident", "community group", "Politician"], label: 'Have you formed any of the following partnerships?' %>
+    </div>
+
+    <%= f.button :submit %>
+<% end %>

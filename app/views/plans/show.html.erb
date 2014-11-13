@@ -1,0 +1,23 @@
+<%= @plan.inspect %>
+<% if @plan.funding == false %>
+
+    <p>You need funding for your project</p>
+
+<% end %>
+
+<% if @plan.resources == false %>
+
+    <p>You need volunteers for your project</p>
+
+<% end %>
+
+<% if @plan.space == false %>
+
+    <p>You need a space for your project</p>
+
+<% end %>
+
+<% if @plan.partnerships == "" %>
+    <p> You should consider making partnerships to increase connetivity in the area </p>
+<%end %>
+

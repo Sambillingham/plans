@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Plan.create([
+    {
+        role: "architect",
+        funding: false,
+        resources: false,
+        space: true,
+        partnerships: nil
+    },
+    {
+        role: "resident",
+        funding: false,
+        resources: true,
+        space: true,
+        partnerships: "architect"
+        }
+    ])
