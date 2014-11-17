@@ -27,7 +27,7 @@ class PlansController < ApplicationController
 
     private
     def plan_params
-        params.require(:plan).permit(:role, :role_other, :funding, :people, :space, :partnerships, :scale, :opportunity, :timescale, :familiarity, :past_projects)
+        params.require(:plan).permit(:role, :role_other, :partnerships, :scale, :opportunity, :timescale, :familiarity, :past_projects, :resources => [])
     end
 
     def possible_roles
@@ -68,14 +68,14 @@ class PlansController < ApplicationController
             answers.push({ :title => "Past Projects", :info => ["Conduct further research to find out."]})
         end
 
-        if @plan.funding == false
+        unless @plan.resources.include? "funding"
             answers.push({:title => "Funding", :info => ["You need funding for your project"]})
         end
-        if @plan.people == false
+        unless @plan.resources.include? "people"
             answers.push({:title => "People", :info => ["You need volunteers for your project"]})
         end
-        if @plan.space ==false
-            @answers.push({:title => "Space", :info => ["You need a space for your project"]})
+        unless @plan.resources.include? "space"
+            answers.push({:title => "Space", :info => ["You need a space for your project"]})
         end
 
         if @plan.partnerships == "no partnerships"
