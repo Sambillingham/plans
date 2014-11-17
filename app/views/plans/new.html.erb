@@ -1,26 +1,30 @@
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <%= simple_form_for(@plan, html: {class: 'form-vertical' }) do |f| %>
+            <h2>About the Project</h2>
+            <%= f.input :scale, :collection => ["extra small", "small", "medium", "large", "extra large"], label: 'What is the scale of your project', input_html: { class: 'form-control' } %>
 
-<%= simple_form_for @plan do |f| %>
-    <h2>About the Project</h2>
-    <%= f.input :scale, :collection => ["extra small", "small", "medium", "large", "extra large"], label: 'What is the scale of your project' %>
+            <%= f.input :opportunity, :collection => [], label: 'Opportunity?', input_html: { class: 'form-control' } %>
 
-    <%= f.input :opportunity, :collection => [], label: 'Opportunity?' %>
+            <%= f.input :timescale, :collection => [['1 Month', 1],['1-6 Months', 6], ['6+ Months', 12]], label: 'What is your timescale?', input_html: { class: 'form-control' } %>
 
-    <%= f.input :timescale, :collection => [['1 Month', 1],['1-6 Months', 6], ['6+ Months', 12]], label: 'What is your timescale?' %>
+            <%= f.input :familiarity, :collection => ["very", "familiar", "unfamiliar"], label: 'How familiar are you with this type of project?', input_html: { class: 'form-control' } %>
 
-    <%= f.input :familiarity, :collection => ["very", "familiar", "unfamiliar"], label: 'How familiar are you with this type of project?' %>
+            <%= f.input :past_projects, :label => "Have any other projects been constructed in the area", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
-    <%= f.input :funding, :label => "Have any other projects been constructed in the area", :collection => [['yes', true],['no',false]] %>
+            <h2>About You</h2>
+            <%= f.input :role, :collection => ["architect", "resident", "community group", "politician"], label: 'What is your role?', input_html: { class: 'form-control' } %>
 
-    <h2>About You</h2>
-    <%= f.input :role, :collection => ["architect", "resident", "community group", "politician"], label: 'What is your role?' %>
+            <%= f.input :funding, :label => "What resources do you have avalible? funding?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
-    <%= f.input :funding, :label => "What resources do you have avalible? funding?", :collection => [['yes', true],['no',false]] %>
+            <%= f.input :people, :label => "What resources do you have avalible? People?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
-    <%= f.input :people, :label => "What resources do you have avalible? People?", :collection => [['yes', true],['no',false]] %>
+            <%= f.input :space, :label => "What resources do you have avalible? Space?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
-    <%= f.input :space, :label => "What resources do you have avalible? Space?", :collection => [['yes', true],['no',false]] %>
+            <%= f.input :partnerships, :collection => ["architect", "resident", "community group", "politician"], label: 'Have you formed any of the following partnerships?', input_html: { class: 'form-control' } %>
 
-    <%= f.input :partnerships, :collection => ["architect", "resident", "community group", "politician"], label: 'Have you formed any of the following partnerships?' %>
+            <%= f.button :submit, { class: 'btn-primary' } %>
+        <% end %>
 
-    <%= f.button :submit %>
-<% end %>
+    </div>
+</div>

@@ -5,15 +5,17 @@
 ready = ->
 
   $("#plan_role").change ->
-    console.log( $(this).val() )
+    $('#plan_partnerships').empty()
+    for role in ["","architect", "resident", "community group", "politician"]
+      $("#plan_partnerships").append("<option value='"+ role + "'>" + role + "</option>")
     $('#plan_partnerships').find("[value='" + $(this).val() + "']" ).remove()
 
   $("#plan_scale").change ->
-    xs = ["providing access", "safety", "improvement/refurbishment", "new build", "engaging local stakeholders"]
-    s = ["design and construction", "improvement/refurbishment"]
-    m = ["engaging local stakeholders"]
-    l = ["master plan"]
-    xl = ["master plan"]
+    xs = ["", "providing access", "safety", "improvement/refurbishment", "new build", "engaging local stakeholders"]
+    s = ["", "design and construction", "improvement/refurbishment"]
+    m = ["", "engaging local stakeholders"]
+    l = ["", "master plan"]
+    xl = ["", "master plan"]
     switch $(this).val()
       when "extra small" then addOportunityOptions(xs)
       when "small" then addOportunityOptions(s)
