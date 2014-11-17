@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117120313) do
+ActiveRecord::Schema.define(version: 20141117162848) do
 
   create_table "plans", force: true do |t|
     t.string   "role"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141117120313) do
     t.string   "opportunity"
     t.integer  "timescale"
     t.string   "familiarity"
-    t.boolean  "past_projects"
+    t.string   "past_projects"
   end
 
 end

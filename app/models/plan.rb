@@ -8,5 +8,5 @@ class Plan < ActiveRecord::Base
     validates :opportunity, presence: true
     validates :timescale, presence: true
     validates :familiarity, presence: true
-    validates_inclusion_of :past_projects, :in => [true, false]
+    validates :past_projects, presence: true
 end
