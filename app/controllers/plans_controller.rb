@@ -22,6 +22,6 @@ class PlansController < ApplicationController
 
     private
     def plan_params
-        params.require(:plan).permit(:role, :funding, :people, :space, :partnerships)
+        params.require(:plan).permit(:role, :funding, :people, :space, :partnerships, :scale, :opportunity, :timescale, :familiarity, :past_projects)
     end
 end

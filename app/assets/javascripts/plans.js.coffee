@@ -8,40 +8,25 @@ ready = ->
     console.log( $(this).val() )
     $('#plan_partnerships').find("[value='" + $(this).val() + "']" ).remove()
 
+  $("#plan_scale").change ->
+    xs = ["providing access", "safety", "improvement/refurbishment", "new build", "engaging local stakeholders"]
+    s = ["design and construction", "improvement/refurbishment"]
+    m = ["engaging local stakeholders"]
+    l = ["master plan"]
+    xl = ["master plan"]
+    switch $(this).val()
+      when "extra small" then addOportunityOptions(xs)
+      when "small" then addOportunityOptions(s)
+      when "medium" then addOportunityOptions(m)
+      when "large" then addOportunityOptions(l)
+      when "extra large" then addOportunityOptions(xl)
 
-  # $(document).on "ajax:error", (xhr, status, error)->
-  #   console.log status.responseText
-  #   console.log error
+  addOportunityOptions = (list) ->
+    console.log(list)
+    $("#plan_opportunity").empty()
+    for size in list
+      $("#plan_opportunity").append("<option value='"+ size + "'>" + size + "</option>")
 
-  # $(".js-open-modal").on "click", ->
-  #   $(".modal").fadeIn()
-
-
-  # $(".modal").on "click", ->
-  #   $(this).fadeOut()
-
-  # $(".modal").children().on "click", ->
-  #   event.stopPropagation()
-
-  # $('.choose-zip').click ->
-  #   $('.upload-zip').fadeIn()
-
-  # $('.js-add-custom-domain,
-  #   .js-futher-domain-instructions,
-  #   .js-futher-domain-instructions-new,
-  #   .js-futher-domain-instructions-already-have').hide();
-
-  # $('.js-new-domain').click ->
-  #   event.stopPropagation()
-  #   $('.js-add-custom-domain').fadeIn()
-  #   $('.js-futher-domain-instructions-new').fadeIn()
-  #   false
-
-  # $('.js-already-have-domain').click ->
-  #   event.stopPropagation()
-  #   $('.js-add-custom-domain').fadeIn()
-  #   $('.js-futher-domain-instructions-already-have').fadeIn()
-  #   false
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
