@@ -1,10 +1,28 @@
-<%= @plan.inspect %>
+<%= @output.inspect %>
 
 <h2> Your Project</h2>
 
-<% @output.each do |answer|%>
+<div class="row">
+    <div class="col-sm-12 col-md-6 well">
+        <% @output.each do |answer|%>
 
-    <p> <%= answer %> </p>
+            <h3><%= answer[:title] %></h3>
 
-<% end %>
+            <% if answer[:info].length > 1 %>
+
+                <% answer[:info].each do |bullet| %>
+
+                    <ul>
+                        <li><%= bullet %></li>
+                    </ul>
+                <% end %>
+
+            <% else %>
+                <p><%= answer[:info].first %></p>
+            <% end %>
+
+
+        <% end %>
+    </div>
+</div>
 
