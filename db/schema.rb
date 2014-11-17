@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117081005) do
+ActiveRecord::Schema.define(version: 20141117083418) do
 
   create_table "plans", force: true do |t|
     t.string   "role"
     t.boolean  "funding"
-    t.boolean  "resources"
+    t.boolean  "people"
     t.boolean  "space"
     t.string   "partnerships"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "scale"
     t.string   "opportunity"
-    t.integer  "timetable"
+    t.integer  "timescale"
     t.integer  "familiarity"
     t.boolean  "past_projects"
   end
