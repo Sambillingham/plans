@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+    before_filter :possible_roles, only: [:new]
+    before_filter :possible_partnerships, only: [:new]
 
     def index
         redirect_to new_plan_path
@@ -26,6 +28,14 @@ class PlansController < ApplicationController
     private
     def plan_params
         params.require(:plan).permit(:role, :funding, :people, :space, :partnerships, :scale, :opportunity, :timescale, :familiarity, :past_projects)
+    end
+
+    def possible_roles
+        @possible_roles = ["architect", "resident", "business", "local government","community group", "politician", "arts group", "other"]
+    end
+
+    def possible_partnerships
+        @possible_partnerships = ["No partnerships","architect", "resident", "community group", "politician", "arts group"]
     end
 
     def plan_output
@@ -71,7 +81,7 @@ class PlansController < ApplicationController
         if @plan.partnerships == "no partnerships"
             answers.push({:title => "Partnerships", :info => ["You should consider making partnerships with Architects, Residents, Community groups, and politicians to increase connetivity in the area"]})
         else
-            @partners = ["architect", "resident", "community group", "politician"]
+            @partners = possible_roles
             @partners.delete(@plan.partnerships)
             message = "You should consider making partnerships with "
             @partners.each do |partner|

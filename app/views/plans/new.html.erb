@@ -13,7 +13,7 @@
             <%= f.input :past_projects, :label => "Have any other projects been constructed in the area", :collection => ['don\'t know','yes', 'no'], input_html: { class: 'form-control' } %>
 
             <h2>About You</h2>
-            <%= f.input :role, :collection => ["architect", "resident", "community group", "politician"], label: 'What is your role?', input_html: { class: 'form-control' } %>
+            <%= f.input :role, :collection => @possible_roles, label: 'What is your role?', input_html: { class: 'form-control' } %>
 
             <%= f.input :funding, :label => "What resources do you have avalible? funding?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
@@ -21,7 +21,7 @@
 
             <%= f.input :space, :label => "What resources do you have avalible? Space?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
-            <%= f.input :partnerships, :collection => ["no partnerships",  "architect", "resident", "community group", "politician"], label: 'Have you formed any of the following partnerships?', input_html: { class: 'form-control' } %>
+            <%= f.input :partnerships, :collection => @possible_partnerships, label: 'Have you formed any of the following partnerships?', input_html: { class: 'form-control' } %>
 
             <%= f.button :submit, { class: 'btn-primary' } %>
         <% end %>
