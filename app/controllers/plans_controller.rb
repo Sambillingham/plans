@@ -49,14 +49,23 @@ class PlansController < ApplicationController
             answers.push({:title => "Familiarity", :info => ["Creating new connections will be important to ensuring success", "Suggest smaller projects leading to more projects", "long time span will be necessary"]})
         end
 
+        case @plan.past_projects
+        when "yes"
+            answers.push({:title => "Past Projects", :info => ["Research previous projects to understand success and failures", "be aware that those you are engaging may have consultation fatigue"]})
+        when "no"
+            answers.push({:title => "Past Projects", :info => ["Opportunity to impact upon area and create a great first impression"]})
+        when "don\'t know"
+            answers.push({ :title => "Past Projects", :info => ["Conduct further research to find out."]})
+        end
+
         if @plan.funding == false
             answers.push({:title => "Funding", :info => ["You need funding for your project"]})
         end
         if @plan.people == false
             answers.push({:title => "People", :info => ["You need volunteers for your project"]})
         end
-        if @plan.space ==
-            answers.push({:title => "Space", :info => ["You need a space for your project"]})
+        if @plan.space ==false
+            @answers.push({:title => "Space", :info => ["You need a space for your project"]})
         end
 
         if @plan.partnerships == "no partnerships"
