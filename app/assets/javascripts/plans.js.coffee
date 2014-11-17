@@ -3,6 +3,17 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
+  $('#plan_resources_funding').change ->
+    if this.checked
+      $(".plan_funding_how").fadeOut()
+    else
+      $(".plan_funding_how").fadeIn()
+
+  $('#plan_resources_people').change ->
+    if this.checked
+      $(".plan_recruit_volunteers").fadeOut()
+    else
+      $(".plan_recruit_volunteers").fadeIn()
 
   $("#plan_role").change ->
     value = $(this).val()
@@ -16,9 +27,7 @@ ready = ->
     else
       $(".plan_role_other").fadeOut()
 
-
   $("#plan_scale").change ->
-    console.log("D")
     checkScaleValue()
 
   checkScaleValue = () ->
@@ -35,7 +44,6 @@ ready = ->
       when "extra large" then addOportunityOptions(xl)
 
   addOportunityOptions = (list) ->
-    console.log(list)
     $("#plan_opportunity").empty()
     for size in list
       $("#plan_opportunity").append("<option value='"+ size + "'>" + size + "</option>")
