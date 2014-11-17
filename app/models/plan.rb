@@ -1,5 +1,7 @@
 class Plan < ActiveRecord::Base
     validates :role, presence: true
+    validates :role_other, presence: true
+    validates_length_of :role_other, :minimum => 2
     validates_inclusion_of :funding, :in => [true, false]
     validates_inclusion_of :people, :in => [true, false]
     validates_inclusion_of :space, :in => [true, false]

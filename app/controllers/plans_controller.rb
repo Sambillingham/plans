@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
-    before_filter :possible_roles, only: [:new]
-    before_filter :possible_partnerships, only: [:new]
+    before_filter :possible_roles, only: [:new, :create]
+    before_filter :possible_partnerships, only: [:new, :create]
 
     def index
         redirect_to new_plan_path
@@ -27,7 +27,7 @@ class PlansController < ApplicationController
 
     private
     def plan_params
-        params.require(:plan).permit(:role, :funding, :people, :space, :partnerships, :scale, :opportunity, :timescale, :familiarity, :past_projects)
+        params.require(:plan).permit(:role, :role_other, :funding, :people, :space, :partnerships, :scale, :opportunity, :timescale, :familiarity, :past_projects)
     end
 
     def possible_roles

@@ -15,6 +15,9 @@
             <h2>About You</h2>
             <%= f.input :role, :collection => @possible_roles, label: 'What is your role?', input_html: { class: 'form-control' } %>
 
+
+            <%= f.input :role_other, label: 'Please specify?', input_html: { class: 'form-control' } %>
+
             <%= f.input :funding, :label => "What resources do you have avalible? funding?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
             <%= f.input :people, :label => "What resources do you have avalible? People?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
