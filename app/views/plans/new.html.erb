@@ -21,7 +21,7 @@
 
             <%= f.input :space, :label => "What resources do you have avalible? Space?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
-            <%= f.input :partnerships, :collection => ["architect", "resident", "community group", "politician"], label: 'Have you formed any of the following partnerships?', input_html: { class: 'form-control' } %>
+            <%= f.input :partnerships, :collection => ["no partnerships",  "architect", "resident", "community group", "politician"], label: 'Have you formed any of the following partnerships?', input_html: { class: 'form-control' } %>
 
             <%= f.button :submit, { class: 'btn-primary' } %>
         <% end %>

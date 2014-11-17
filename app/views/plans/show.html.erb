@@ -2,37 +2,9 @@
 
 <h2> Your Project</h2>
 
+<% @output.each do |answer|%>
 
-<% if @plan.funding == false %>
-
-    <p>You need funding for your project</p>
-
-<% end %>
-
-<% if @plan.people == false %>
-
-    <p>You need volunteers for your project</p>
-
-<% end %>
-
-<% if @plan.space == false %>
-
-    <p>You need a space for your project</p>
-
-<% end %>
-
-<% if @plan.partnerships == "" %>
-    <p> You should consider making partnerships with Architects, Residents, Community groups, and politicians to increase connetivity in the area </p>
-
-<% else %>
-
-    <% @partners.delete(@plan.partnerships) %>
-
-    You should consider making partnerships with<br>
-    <% @partners.each do |partner| %>
-        - <%= partner %>s<br>
-    <% end %>
-    as well as more <%= @plan.partnerships %>s
+    <p> <%= answer %> </p>
 
 <% end %>
 
