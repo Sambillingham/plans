@@ -11,12 +11,16 @@ ready = ->
     $('#plan_partnerships').find("[value='" + $(this).val() + "']" ).remove()
 
   $("#plan_scale").change ->
+    console.log("D")
+    checkScaleValue()
+
+  checkScaleValue = () ->
     xs = ["", "providing access", "safety", "improvement/refurbishment", "new build", "engaging local stakeholders"]
     s = ["", "design and construction", "improvement/refurbishment"]
     m = ["", "engaging local stakeholders"]
     l = ["", "master plan"]
     xl = ["", "master plan"]
-    switch $(this).val()
+    switch $("#plan_scale").val()
       when "extra small" then addOportunityOptions(xs)
       when "small" then addOportunityOptions(s)
       when "medium" then addOportunityOptions(m)
@@ -29,6 +33,7 @@ ready = ->
     for size in list
       $("#plan_opportunity").append("<option value='"+ size + "'>" + size + "</option>")
 
+  checkScaleValue()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

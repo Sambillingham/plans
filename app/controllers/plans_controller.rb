@@ -1,6 +1,8 @@
 class PlansController < ApplicationController
 
-
+    def index
+        redirect_to new_plan_path
+    end
     def new
         @plan = Plan.new
     end
@@ -17,6 +19,7 @@ class PlansController < ApplicationController
             redirect_to plan_path(@plan)
         else
             flash[:error] = "Boo, Something went wrong"
+            render :new
         end
     end
 
