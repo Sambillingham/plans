@@ -12,6 +12,7 @@ end
 group :production do
     gem 'pg'
     gem 'rails_12factor'
+    gem 'postmark-rails', '~> 0.8.0'
 end
 
 # Use SCSS for stylesheets
