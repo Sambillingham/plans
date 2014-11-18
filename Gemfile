@@ -49,5 +49,6 @@ gem 'spring',        group: :development
 
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
+gem 'devise'
 
 ruby '2.1.4'
