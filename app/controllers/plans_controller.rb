@@ -27,7 +27,7 @@ class PlansController < ApplicationController
 
     private
     def plan_params
-        params.require(:plan).permit(:role, :role_other, :partnerships, :scale, :opportunity, :timescale, :familiarity, :past_projects, :funding_how, :recruit_volunteers, :resources => [])
+        params.require(:plan).permit(:role, :role_other,{:partnerships => []}, :scale, :opportunity, :timescale, :familiarity, :past_projects, :funding_how, :recruit_volunteers, :resources => [])
     end
 
     def possible_roles
@@ -35,7 +35,7 @@ class PlansController < ApplicationController
     end
 
     def possible_partnerships
-        @possible_partnerships = ["No partnerships","architect", "resident", "community group", "politician", "arts group"]
+        @possible_partnerships = ["architect", "resident", "local business", "local government", "community group", "politician", "arts group"]
     end
 
     def plan_output
@@ -84,17 +84,12 @@ class PlansController < ApplicationController
             answers.push({:title => "Space", :info => ["You need a space for your project"]})
         end
 
-        if @plan.partnerships == "no partnerships"
+        if @plan.partnerships == ""
             answers.push({:title => "Partnerships", :info => ["You should consider making partnerships with Architects, Residents, Community groups, and politicians to increase connetivity in the area"]})
         else
-            @partners = possible_roles
-            @partners.delete(@plan.partnerships)
-            message = "You should consider making partnerships with "
-            @partners.each do |partner|
-                message = message + partner + "s "
-            end
-            message = message + "as well as other " + @plan.partnerships + "s"
-            answers.push({:title => "Partnerships", :info => [message]})
+            answers.push({:title => "Partnerships", :info => ["You could consider making additional partnerships"]})
+            @partners = possible_partnerships - @plan.partnerships
+            answers.push({:title => "", :info => @partners })
         end
 
         return answers

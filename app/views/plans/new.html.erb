@@ -17,13 +17,13 @@
 
             <%= f.input :role_other, label: 'Please specify your skills?', input_html: { class: 'form-control' } %>
 
-            <%= f.input :resources, :label => "What resources do you have avalible?", :collection => ["space", "people", "funding"], :as => :check_boxes %>
+            <%= f.input :resources, :label => "What resources do you have available?", :collection => ["space", "people", "funding"], :as => :check_boxes %>
 
             <%= f.input :funding_how, :label => "Do you know where/how to apply for funding?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
             <%= f.input :recruit_volunteers, :label => "Would you like to recruit volunteers?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
 
-            <%= f.input :partnerships, :collection => @possible_partnerships, label: 'Have you formed any of the following partnerships?', input_html: { class: 'form-control' } %>
+            <%= f.input :partnerships, :collection => @possible_partnerships, label: 'Have you formed any of the following partnerships?', :as => :check_boxes %>
 
             <%= f.button :submit, { class: 'btn-primary' } %>
         <% end %>

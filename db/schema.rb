@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117213355) do
+ActiveRecord::Schema.define(version: 20141118082945) do
 
   create_table "plans", force: true do |t|
     t.string   "role"
-    t.string   "partnerships"
+    t.text     "partnerships",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "scale"

@@ -1,7 +1,8 @@
 class Plan < ActiveRecord::Base
     serialize :resources
+    serialize :partnerships
+
     validates :role, presence: true
-    validates :partnerships, presence: true
     validates :scale, presence: true
     validates :opportunity, presence: true
     validates :timescale, presence: true

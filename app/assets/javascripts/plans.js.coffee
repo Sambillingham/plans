@@ -17,10 +17,10 @@ ready = ->
 
   $("#plan_role").change ->
     value = $(this).val()
-    $('#plan_partnerships').empty()
-    for role in ["","architect", "resident", "community group", "politician"]
-      $("#plan_partnerships").append("<option value='"+ role + "'>" + role + "</option>")
-    $('#plan_partnerships').find("[value='" + value + "']" ).remove()
+    # $('#plan_partnerships').empty()
+    # for role in ["","architect", "resident", "community group", "politician"]
+    #   $("#plan_partnerships").append("<option value='"+ role + "'>" + role + "</option>")
+    # $('#plan_partnerships').find("[value='" + value + "']" ).remove()
 
     if value == "other"
       $(".plan_role_other").fadeIn()
