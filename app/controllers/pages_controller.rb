@@ -5,6 +5,6 @@ class PagesController < ApplicationController
     end
 
     def dashboard
-
+        @plans = Plan.all
     end
 end

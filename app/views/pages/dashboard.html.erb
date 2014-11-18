@@ -1,1 +1,61 @@
-dashboard
+<h1>dashboard</h1>
+
+<div class="table-container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Role</th>
+                <th>Partnerships</th>
+                <th>Scale</th>
+                <th>Opportunity</th>
+                <th>Timescale</th>
+                <th>Familiarity</th>
+                <th>Past Projects</th>
+                <th>Role Other</th>
+                <th>Resources</th>
+                <th>Funding How</th>
+                <th>Recruit?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @plans.each do |plan| %>
+                <tr>
+                    <td><%= plan.id %></td>
+                    <td><%= plan.role %></td>
+                    <td><ul>
+                        <% plan.partnerships.each do |partner| %>
+                            <% unless partner.blank? %>
+                                <li><%= partner %></li>
+                            <% end %>
+                        <% end %>
+                    </ul></td>
+                    <td><%= plan.scale %></td>
+                    <td><%= plan.opportunity %></td>
+                    <td>
+                        <% case plan.timescale %>
+                        <% when 1 %>
+                            <%= "1 Month" %>
+                        <% when 6 %>
+                            <%= "1-6 Months" %>
+                        <% when 12 %>
+                            <%= "6+ Months" %>
+                        <% end %>
+                    </td>
+                    <td><%= plan.familiarity %></td>
+                    <td><%= plan.past_projects %></td>
+                    <td><%= unless plan.role_other.blank? then plan.role_other else 'N/A' end %></td>
+                    <td><ul>
+                        <% plan.resources.each do |resource| %>
+                            <% unless resource.blank? %>
+                                <li><%= resource %></li>
+                            <% end %>
+                        <% end %>
+                    </ul></td>
+                    <td><%= plan.funding_how ? 'yes' : 'no' %></td>
+                    <td><%= plan.recruit_volunteers ? 'yes' : 'no' %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
