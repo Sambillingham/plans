@@ -16,10 +16,14 @@ form {
     right: 0;
     bottom: 0;
     background-color: #fafafa;
-    padding: 10% 10% 0 10%;
+}
+.question-inner {
+    padding-top: 100px;
+    width: 50%;
+    margin: 0 auto;
 }
 
-.next-q {
+.btn {
     border-radius: 50px;
     width: 115px;
     height: 50px;
@@ -31,25 +35,46 @@ form {
     cursor: pointer;
     font-weight: 700;
 }
+.next-q {
+}
 
 
 .prev-q {
-    border-radius: 50px;
     width: 85px;
-    height: 50px;
-    text-align: center;
-    border: solid 3px #444;
-    padding: 10px 15px;
     float: left;
-    line-height: 25px;
-    cursor: pointer;
-    font-weight: 700;
+}
+
+.btn-submit,
+.btn-final-prev {
+    display: block;
+    margin: 0 auto;
+    float: none;
+    border: solid 0 transparent;
+}
+.btn-final-prev {
+    border: solid 0 transparent;
+    font-size: 11px;
+}
+.btn-submit {
+    margin: 100px auto 0 auto;
+}
+.form-control:focus {
+    border: solid 2px #000;
+    box-shadow: none;
+}
+.controls .checkbox {
+    margin-left: 20px;
+    line-height: 1;
+    margin-bottom: 25px;
 }
 .create {
     margin: 40px auto;
     display: block;
     float: none;
     width: 150px;
+}
+.control-group {
+    margin-bottom: 25px;
 }
 
 abbr[title="required"] {

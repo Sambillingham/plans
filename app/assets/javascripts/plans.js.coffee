@@ -29,18 +29,20 @@ ready = ->
   # if the user says they want funding show extra Question
   $('#plan_resources_funding').change ->
     if this.checked
+      $(".plan_funding_how").closest('.question-slide').fadeOut()
       $(".plan_funding_how").fadeOut()
     else
+      $(".plan_funding_how").closest('.question-slide').fadeIn()
       $(".plan_funding_how").fadeIn()
 
   # if the user says they want volunteers show extra Question
   $('#plan_resources_people').change ->
     if this.checked
-      $(".plan_recruit_volunteers").parent().fadeOut()
+      $(".plan_recruit_volunteers").closest('.question-slide').fadeOut()
       $(".plan_recruit_volunteers").fadeOut()
     else
+      $(".plan_recruit_volunteers").closest('.question-slide').fadeIn()
       $(".plan_recruit_volunteers").fadeIn()
-      $(".plan_recruit_volunteers").parent().fadeIn()
 
 
   $("#plan_role").change ->
@@ -51,10 +53,10 @@ ready = ->
     # $('#plan_partnerships').find("[value='" + value + "']" ).remove()
 
     if value == "other"
-      $(".plan_role_other").parent().fadeIn()
+      $(".plan_role_other").closest('.question-slide').fadeIn()
       $(".plan_role_other").fadeIn()
     else
-      $(".plan_role_other").parent().fadeOut()
+      $(".plan_role_other").closest('.question-slide').fadeOut()
       $(".plan_role_other").fadeOut()
 
   $("#plan_scale").change ->
@@ -87,16 +89,17 @@ ready = ->
       selected = $(this).prev().find('select').find(":selected").text()
 
       if selected != ''
-        $(this).parent().fadeOut()
+        $('.alert').remove
+        $(this).closest('.question-slide').fadeOut()
       else
-        $('body').append('<div class="alert alert-danger">Please answer the question before continuing</div>')
+        $(this).parent().prepend('<div class="alert alert-danger">Please answer the question before continuing</div>')
     else
-      $(this).parent().fadeOut()
+      $('.alert').remove
+      $(this).closest('.question-slide').fadeOut()
 
 
   $('.prev-q').click ->
-    $(this).parent().next().fadeIn()
-    $(this).parent().next().addClass("test")
+    $(this).closest('.question-slide').next().fadeIn()
 
 
 $(document).ready(ready)

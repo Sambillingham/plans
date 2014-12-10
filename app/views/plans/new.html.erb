@@ -3,84 +3,110 @@
         <span class="restart-plan">Restart</span>
 
         <div class="question-slide clearfix">
+            <div class="question-inner">
                 <h2>Welcome to the Co Design Toolkit</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aliquid nisi, maiores fuga perspiciatis dignissimos sint cumque earum eaque. Quisquam amet at ratione eligendi consectetur sequi, ab mollitia ullam sed! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos deleniti odit aperiam quo nostrum laborum, minima nemo, iusto eveniet, placeat sapiente facilis esse repellat suscipit! Placeat architecto quis explicabo molestiae.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aliquid nisi, maiores fuga perspiciatis dignissimos sint cumque earum eaque. Quisquam amet at ratione eligendi consectetur sequi, ab mollitia ullam sed!</p>
-                <span class="next-q create">Create Plan</span>
+                <span class="btn next-q create">Create Plan</span>
             </div>
+        </div>
 
         <%= simple_form_for(@plan, html: {class: 'form-vertical' }) do |f| %>
 
             <div class="question-slide clearfix">
-                <h2>About the Project</h2>
-                <%= f.input :scale, :collection => ["extra small", "small", "medium", "large", "extra large"], label: 'What is the scale of your project', input_html: { class: 'form-control' } %>
-                <span data-q-type="select" class="next-q">Continue</span>
+                <div class="question-inner">
+                    <h2>About the Project</h2>
+                    <%= f.input :scale, :collection => ["extra small", "small", "medium", "large", "extra large"], label: 'What is the scale of your project?', input_html: { class: 'form-control' } %>
+                    <span data-q-type="select" class="btn next-q">Continue</span>
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.input :opportunity, :collection => [], label: 'Opportunity?', input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :opportunity, :collection => [], label: 'What is your Opportunity in this project?', input_html: { class: 'form-control' } %>
+                    <span data-q-type="select" class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.input :timescale, :collection => [['1 Month', 1],['1-6 Months', 6], ['6+ Months', 12]], label: 'What is your timescale?', input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :timescale, :collection => [['1 Month', 1],['1-6 Months', 6], ['6+ Months', 12]], label: 'What is your timescale?', input_html: { class: 'form-control' } %>
+                    <span data-q-type="select" class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.input :familiarity, :collection => ["very", "familiar", "unfamiliar"], label: 'How familiar are you with this type of project?', input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :familiarity, :collection => ["very", "familiar", "unfamiliar"], label: 'How familiar are you with this type of project?', input_html: { class: 'form-control' } %>
+                    <span data-q-type="select" class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.input :past_projects, :label => "Have any other projects been constructed in the area", :collection => ['don\'t know','yes', 'no'], input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :past_projects, :label => "Have any other projects been constructed in the area", :collection => ['don\'t know','yes', 'no'], input_html: { class: 'form-control' } %>
+                    <span data-q-type="select" class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <h2>About You</h2>
-                <%= f.input :role, :collection => @possible_roles, label: 'What is your role?', input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <h2>About You</h2>
+                    <%= f.input :role, :collection => @possible_roles, label: 'What is your role?', input_html: { class: 'form-control' } %>
+                    <span data-q-type="select" class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix extra-q">
-                <%= f.input :role_other, label: 'Please specify your skills?', input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :role_other, label: 'Please specify your skills?', input_html: { class: 'form-control' } %>
+                    <span class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.input :resources, :label => "What resources do you have available?", :collection => ["space", "people", "funding"], :as => :check_boxes %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :resources, :label => "What resources do you have available?", :collection => ["space", "people", "funding"], :as => :check_boxes %>
+                    <span class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.input :funding_how, :label => "Do you know where/how to apply for funding?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :funding_how, :label => "Do you know where/how to apply for funding?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
+                    <span data-q-type="select" class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix extra-q">
-                <%= f.input :recruit_volunteers, :label => "Would you like to recruit volunteers?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
-<!--                 <span class="next-q">Continue</span> -->
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :recruit_volunteers, :label => "Would you like to recruit volunteers?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
+    <!--                 <span class="btn next-q">Continue</span> -->
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.input :partnerships, :collection => @possible_partnerships, label: 'Have you formed any of the following partnerships?', :as => :check_boxes %>
-                <span class="next-q">Continue</span>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.input :partnerships, :collection => @possible_partnerships, label: 'Have you formed any of the following partnerships?', :as => :check_boxes %>
+                    <span class="btn next-q">Continue</span>
+                    <!-- <span class="btn prev-q">Back</span> -->
+                </div>
             </div>
 
             <div class="question-slide clearfix">
-                <%= f.button :submit, { class: 'btn-primary' } %>
-                <span class="prev-q">Back</span>
+                <div class="question-inner">
+                    <%= f.button :submit, { class: 'btn btn-success btn-submit' } %>
+                    <!-- <span class="btn prev-q btn-final-prev">go back</span> -->
+                </div>
             </div>
 
         <% end %>
