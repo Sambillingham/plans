@@ -14,7 +14,7 @@
             <div class="question-slide clearfix">
                 <h2>About the Project</h2>
                 <%= f.input :scale, :collection => ["extra small", "small", "medium", "large", "extra large"], label: 'What is the scale of your project', input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
+                <span data-q-type="select" class="next-q">Continue</span>
             </div>
 
             <div class="question-slide clearfix">
@@ -68,7 +68,7 @@
 
             <div class="question-slide clearfix extra-q">
                 <%= f.input :recruit_volunteers, :label => "Would you like to recruit volunteers?", :collection => [['yes', true],['no',false]], input_html: { class: 'form-control' } %>
-                <span class="next-q">Continue</span>
+<!--                 <span class="next-q">Continue</span> -->
                 <span class="prev-q">Back</span>
             </div>
 

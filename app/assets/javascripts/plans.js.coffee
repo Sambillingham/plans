@@ -3,21 +3,37 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
+  # move the slide on if the value of input changes
+  # $('#plan_scale,
+  #   #plan_opportunity,
+  #   #plan_timescale,
+  #   #plan_familiarity,
+  #   #plan_past_projects,
+  #   #plan_role,
+  #   #plan_funding_how,
+  #   #plan_recruit_volunteers').change ->
+  #   $(this).closest('.question-slide').fadeOut()
 
+
+  # switch the ordering of questions so they stack correctly
   $("form").append($(".question-slide").get().reverse())
 
+  # when past the first slide, fade in the restart button
   $('.create').click ->
     $('.restart-plan').fadeIn()
 
+  # have the reset button refresh the page
   $('.restart-plan').click ->
     window.location.reload()
 
+  # if the user says they want funding show extra Question
   $('#plan_resources_funding').change ->
     if this.checked
       $(".plan_funding_how").fadeOut()
     else
       $(".plan_funding_how").fadeIn()
 
+  # if the user says they want volunteers show extra Question
   $('#plan_resources_people').change ->
     if this.checked
       $(".plan_recruit_volunteers").parent().fadeOut()
@@ -66,7 +82,17 @@ ready = ->
 
 
   $('.next-q').click ->
-    $(this).parent().fadeOut()
+
+    if $(this).data('q-type') == 'select'
+      selected = $(this).prev().find('select').find(":selected").text()
+
+      if selected != ''
+        $(this).parent().fadeOut()
+      else
+        $('body').append('<div class="alert alert-danger">Please answer the question before continuing</div>')
+    else
+      $(this).parent().fadeOut()
+
 
   $('.prev-q').click ->
     $(this).parent().next().fadeIn()
