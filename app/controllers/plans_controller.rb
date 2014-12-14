@@ -131,7 +131,18 @@ class PlansController < ApplicationController
         projects = [data_collection, small_workshop, intervention_workshop, art_workship]
 
         # Testing scores for each
-        projects.each_with_index {|val, index| answers.push({:title => "#{index}", :info => "#{val}" }) }
+        projects.each_with_index do |val, index|
+            case index
+            when 0
+                answers.push({:title => "Data Collection", :info => ["Score: #{val}"] })
+            when 1
+                answers.push({:title => "Small Workshop", :info => ["Score: #{val}"] })
+            when 2
+                answers.push({:title => "Intervention Workshop", :info => ["Score: #{val}"] })
+            when 3
+                answers.push({:title => "Arts Workshop", :info => ["Score: #{val}"] })
+            end
+        end
 
         max = projects.each_index.select { |i| projects[i] == projects.max }
 
