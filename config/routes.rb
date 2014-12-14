@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :admins
   resources :plans
 
-  root 'plans#new'
+  root 'pages#home'
 
+  get 'projects' => 'pages#projects'
   get 'dashboard' => 'pages#dashboard'
   get 'about' => 'pages#about'
 
