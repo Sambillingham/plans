@@ -63,17 +63,14 @@ ready = ->
     checkScaleValue()
 
   checkScaleValue = () ->
-    xs = ["", "providing access", "safety", "improvement/refurbishment", "new build", "engaging local stakeholders"]
-    s = ["", "design and construction", "improvement/refurbishment"]
-    m = ["", "engaging local stakeholders"]
-    l = ["", "master plan"]
-    xl = ["", "master plan"]
+    a = ["", "Design and Construction", "Improvement/Refurbishment"]
+    b = ["", "Providing Access", "Addressing Safety", "Improvement/Refurbishment", "New Build", "Engaging Local Stakeholders"]
+    c = ["", "Masterplanning", "Addressing Social Issues", "Addressing Safety", "Questioning Policy", "Engaging Stakeholders"]
     switch $("#plan_scale").val()
-      when "extra small" then addOportunityOptions(xs)
-      when "small" then addOportunityOptions(s)
-      when "medium" then addOportunityOptions(m)
-      when "large" then addOportunityOptions(l)
-      when "extra large" then addOportunityOptions(xl)
+      when "small" then addOportunityOptions(a)
+      when "medium" then addOportunityOptions(b)
+      when "large" then addOportunityOptions(c)
+      when "extra large" then addOportunityOptions(c)
 
   checkScaleValue()
 
