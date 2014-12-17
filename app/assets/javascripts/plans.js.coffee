@@ -14,6 +14,8 @@ ready = ->
   #   #plan_recruit_volunteers').change ->
   #   $(this).closest('.question-slide').fadeOut()
 
+  # hide the no button on send an email
+  $('#plan_email_user_plan_false').parent().hide()
 
   # switch the ordering of questions so they stack correctly
   $("form").append($(".question-slide").get().reverse())

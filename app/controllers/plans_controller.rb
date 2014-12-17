@@ -27,7 +27,7 @@ class PlansController < ApplicationController
 
     private
     def plan_params
-        params.require(:plan).permit(:role, :role_other,{:partnerships => []}, :scale, :opportunity, :timescale, :familiarity, :past_projects, :funding_how, :recruit_volunteers, { :resources => []}, :name, :email)
+        params.require(:plan).permit(:role, :role_other,{:partnerships => []}, :scale, :opportunity, :timescale, :familiarity, :past_projects, :funding_how, :recruit_volunteers, { :resources => []}, :name, :email, :email_user_plan)
     end
 
     def possible_roles

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217202636) do
+ActiveRecord::Schema.define(version: 20141217204906) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20141217202636) do
     t.boolean  "recruit_volunteers"
     t.string   "name"
     t.string   "email"
+    t.boolean  "email_user_plan"
   end
 
 end
