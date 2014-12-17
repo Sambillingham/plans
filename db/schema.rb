@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118185324) do
+ActiveRecord::Schema.define(version: 20141217202636) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20141118185324) do
     t.text     "resources",          limit: 255
     t.boolean  "funding_how"
     t.boolean  "recruit_volunteers"
+    t.string   "name"
+    t.string   "email"
   end
 
 end

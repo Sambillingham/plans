@@ -6,6 +6,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
                     <th>Role</th>
                     <th>Partnerships</th>
                     <th>Scale</th>
@@ -23,6 +25,8 @@
                 <% @plans.each do |plan| %>
                     <tr>
                         <td><%= plan.id %></td>
+                        <td><%= plan.name %></td>
+                        <td><%= plan.email %></td>
                         <td><%= plan.role %></td>
                         <td><ul>
                             <% plan.partnerships.each do |partner| %>

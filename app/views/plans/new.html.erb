@@ -104,6 +104,10 @@
 
             <div class="question-slide clearfix">
                 <div class="question-inner">
+
+                    <%= f.input :name, label: 'Name', input_html: { class: 'form-control' } %>
+                    <%= f.input :email, label: 'Email', input_html: { class: 'form-control' } %>
+
                     <%= f.button :submit, { class: 'btn btn-success btn-submit' } %>
                     <!-- <span class="btn prev-q btn-final-prev">go back</span> -->
                 </div>
