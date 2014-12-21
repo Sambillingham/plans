@@ -1,0 +1,67 @@
+<header data-vide-bg="" data-vide-options="muted: false, position: 50% 20%" class="video-container">
+    <div class="overlay"></div>
+    <a href="#about"></a>
+</header>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <p class="about__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ex voluptas, aliquam ea rerum! Numquam quis quaerat recusandae dolores cupiditate nam inventore minus quo saepe, nihil? Dolorem fugit nam voluptates.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="toolkit">
+
+    <div class="toolkit__cta">
+        <h2>Toolkit</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ex voluptas,</p>
+        <%= link_to "Create a Plan", new_plan_path,{ :class=> "btn" }  %>
+    </div>
+</section>
+
+<section id="project" class="project">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
+                <a href="#">
+                    <div class="project__item" style="background-image: url(<%= image_path('sky.jpg')%>);">
+                        <span>Project Title</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-5">
+                <a href="#">
+                    <div class="project__item" style="background-image: url(<%= image_path('bridge.jpg')%>);">
+                        <span>Project Title</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
+                <a href="#">
+                    <div class="project__item" style="background-image: url(<%= image_path('bar.jpg')%>);">
+                        <span>Project Title</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-5">
+                <a href="#">
+                    <div class="project__item" style="background-image: url(<%= image_path('church.jpg')%>);">
+                        <span>Project Title</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="author">
+
+</section>
+
+<footer>
+    <p> &copy; Bagnal </p>
+</footer>
+

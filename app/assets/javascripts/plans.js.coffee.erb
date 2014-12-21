@@ -100,6 +100,16 @@ ready = ->
   $('.prev-q').click ->
     $(this).closest('.question-slide').next().fadeIn()
 
+  # path = "video/fish";
+  # console.log path
+
+  # asset2 = "<%= asset_path('" + path + ".jpg') %>";
+  # asset = "<%= asset_path('video/fish.jpg') %>";
+
+  # console.log asset
+
+  # $('<img src="'+ asset2 +'">').appendTo 'body'
+  # $('<img src="'+ asset +'">').appendTo 'body'
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

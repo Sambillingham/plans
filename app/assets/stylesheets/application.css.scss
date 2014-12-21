@@ -1,5 +1,10 @@
 @import "bootstrap";
+@import "vars";
+@import "mixins";
 @import "global";
 @import "plans";
-@import "pages"
+@import "pages";
+
+// Single Page Styles
+@import "home";
 
