@@ -8,13 +8,14 @@
     }
 }
 
-.toolkit {
+.parallax {
     height: 500px;
-    background: url(<%= image_url("fish.jpg") %>) center no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 
-    .toolkit__cta {
+    .parallax__cta {
         position: absolute;
         bottom: 30px;
         right: 30px;
@@ -32,7 +33,42 @@
         }
     }
 }
+.parallax--toolkit {
+    // background-image: url(<%= image_url("hill.jpg") %>);
+}
 
+// .spacer {
+//     height: 200px;
+//     background-color: green;
+// }
+
+
+#parallax1,
+#parallax2,
+#parallax3,
+.parallax {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+#parallax1 > div,
+#parallax2 > div,
+#parallax3 > div,
+.parallax__bg {
+    position: relative;
+    height: 200%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+
+
+.parallax--author {
+    // background-image: url(<%= image_url("dan.jpg") %>);
+}
 
 .project {
     padding: 100px 0;

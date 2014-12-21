@@ -13,9 +13,9 @@
     </div>
 </section>
 
-<section class="toolkit">
-
-    <div class="toolkit__cta">
+<section class="parallax parallax--toolkit js-parallax--toolkit">
+    <div class="parallax__bg" style="background-image: url(<%= image_path('hill.jpg')%>);"></div>
+    <div class="parallax__cta">
         <h2>Toolkit</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ex voluptas,</p>
         <%= link_to "Create a Plan", new_plan_path,{ :class=> "btn" }  %>
@@ -57,9 +57,45 @@
     </div>
 </section>
 
-<section id="author">
-
+<section class="parallax parallax--author js-parallax--author">
+    <div class="parallax__bg" style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
+    <div class="parallax__cta">
+        <h2>Toolkit</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ex voluptas,</p>
+        <%= link_to "Create a Plan", new_plan_path,{ :class=> "btn" }  %>
+    </div>
 </section>
+
+<!-- <section class="demo">
+
+    <div class="spacer s0"></div>
+    <div id="parallax1">
+        <div style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
+    </div>
+    <div class="spacer s1">
+        <div class="box2 blue">
+            <p>Content 1</p>
+            <a href="#" class="viewsource">view source</a>
+        </div>
+    </div>
+
+    <div class="spacer s0"></div>
+    <div id="parallax2">
+        <div style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
+    </div>
+    <div class="spacer s1">
+        <div class="box2 blue">
+            <p>Content 2</p>
+            <a href="#" class="viewsource">view source</a>
+        </div>
+    </div>
+    <div class="spacer s0"></div>
+    <div id="parallax3">
+        <div style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
+    </div>
+    <div class="spacer s2"></div>
+
+</section> -->
 
 <footer>
     <p> &copy; Bagnal </p>
