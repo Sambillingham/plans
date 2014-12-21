@@ -7,9 +7,9 @@ ready = ->
     # Waypoints
     adjustNav = (direction) ->
         if direction == 'down'
-            $('nav').css('top','0')
+            $('.js-navbar').css('top','0')
         else
-            $('nav').css('top','-75px')
+            $('.js-navbar').css('top','-75px')
 
     $('#about').waypoint( adjustNav , { offset : '25%' } )
     # end waypoints
@@ -23,6 +23,9 @@ ready = ->
         return false
 
     $('.js-smooth-scroll').on('click', smoothScroll)
+
+
+    $('.js-headline').delay(3000).fadeOut(500)
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

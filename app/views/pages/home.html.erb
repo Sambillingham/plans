@@ -1,6 +1,14 @@
-<header data-vide-bg="" data-vide-options="muted: false, position: 50% 20%" class="video-container">
-    <div class="overlay"></div>
-    <a href="#about" class="js-smooth-scroll"></a>
+<header data-vide-bg="" data-vide-options="muted: false, position: 50% 20%" class="intro">
+    <div class="intro__overlay"></div>
+    <nav class="intro__nav" role="navigation">
+        <%= link_to "Home", root_path, { :class => 'active'} %>
+        <%= link_to "About", about_path %>
+        <%= link_to "Projects", projects_path %>
+        <%= link_to "New Plan", new_plan_path, { :class => 'btn'} %>
+    </nav>
+    <h1 class="intro__headline js-headline">Co Design Toolkit</h1>
+
+    <a href="#about" class="intro__continue js-smooth-scroll"></a>
 </header>
 
 <section id="about" class="about">
@@ -22,7 +30,7 @@
     </div>
 </section>
 
-<section id="project" class="project">
+<section class="project">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">

@@ -14,7 +14,7 @@ $(document).ready(function($) {
         .addTo(controller);
 
     new ScrollScene({triggerElement: ".js-parallax--toolkit"})
-        .setTween(TweenMax.from(".js-parallax--toolkit > .parallax__bg", 1, {top: "-130%", ease: Linear.easeNone}))
+        .setTween(TweenMax.from(".js-parallax--toolkit > .parallax__bg", 1, {top: "-110%", ease: Linear.easeNone}))
         .addTo(controller);
 
 });
