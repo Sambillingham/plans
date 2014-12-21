@@ -17,5 +17,4 @@
 //= require TweenMax.min
 //= require jquery.scrollmagic.min
 //= require waypoints
-//= require turbolinks
 //= require_tree .
