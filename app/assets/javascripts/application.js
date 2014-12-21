@@ -13,5 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery-vide-custom
+//= require TweenMax.min
+//= require jquery.scrollmagic.min
+//= require waypoints
 //= require turbolinks
 //= require_tree .

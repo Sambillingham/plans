@@ -1,6 +1,6 @@
 <header data-vide-bg="" data-vide-options="muted: false, position: 50% 20%" class="video-container">
     <div class="overlay"></div>
-    <a href="#about"></a>
+    <a href="#about" class="js-smooth-scroll"></a>
 </header>
 
 <section id="about" class="about">
@@ -15,7 +15,7 @@
 
 <section class="parallax parallax--toolkit js-parallax--toolkit">
     <div class="parallax__bg" style="background-image: url(<%= image_path('hill.jpg')%>);"></div>
-    <div class="parallax__cta">
+    <div class="parallax__cta parallax__cta--br">
         <h2>Toolkit</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ex voluptas,</p>
         <%= link_to "Create a Plan", new_plan_path,{ :class=> "btn" }  %>
@@ -26,32 +26,35 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
-                <a href="#">
+                <a href="<%= projects_path %>">
                     <div class="project__item" style="background-image: url(<%= image_path('sky.jpg')%>);">
                         <span>Project Title</span>
                     </div>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-5">
-                <a href="#">
+                <a href="<%= projects_path %>">
                     <div class="project__item" style="background-image: url(<%= image_path('bridge.jpg')%>);">
                         <span>Project Title</span>
                     </div>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
-                <a href="#">
+                <a href="<%= projects_path %>">
                     <div class="project__item" style="background-image: url(<%= image_path('bar.jpg')%>);">
                         <span>Project Title</span>
                     </div>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-5">
-                <a href="#">
+                <a href="<%= projects_path %>">
                     <div class="project__item" style="background-image: url(<%= image_path('church.jpg')%>);">
                         <span>Project Title</span>
                     </div>
                 </a>
+            </div>
+            <div class="col-xs-12">
+                <a>More Projects</a>
             </div>
         </div>
     </div>
@@ -59,43 +62,12 @@
 
 <section class="parallax parallax--author js-parallax--author">
     <div class="parallax__bg" style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
-    <div class="parallax__cta">
-        <h2>Toolkit</h2>
+    <div class="parallax__cta parallax__cta--tl">
+        <h2>Dan Bagnal</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ex voluptas,</p>
-        <%= link_to "Create a Plan", new_plan_path,{ :class=> "btn" }  %>
+        <%= link_to "Learn more about this project", new_plan_path,{ :class=> "" }  %>
     </div>
 </section>
-
-<!-- <section class="demo">
-
-    <div class="spacer s0"></div>
-    <div id="parallax1">
-        <div style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
-    </div>
-    <div class="spacer s1">
-        <div class="box2 blue">
-            <p>Content 1</p>
-            <a href="#" class="viewsource">view source</a>
-        </div>
-    </div>
-
-    <div class="spacer s0"></div>
-    <div id="parallax2">
-        <div style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
-    </div>
-    <div class="spacer s1">
-        <div class="box2 blue">
-            <p>Content 2</p>
-            <a href="#" class="viewsource">view source</a>
-        </div>
-    </div>
-    <div class="spacer s0"></div>
-    <div id="parallax3">
-        <div style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
-    </div>
-    <div class="spacer s2"></div>
-
-</section> -->
 
 <footer>
     <p> &copy; Bagnal </p>
