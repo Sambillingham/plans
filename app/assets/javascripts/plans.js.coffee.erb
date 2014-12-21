@@ -23,6 +23,7 @@ ready = ->
   # when past the first slide, fade in the restart button
   $('.create').click ->
     $('.restart-plan').fadeIn()
+    $('.js-navbar').fadeOut(1000)
 
   # have the reset button refresh the page
   $('.restart-plan').click ->
@@ -46,13 +47,9 @@ ready = ->
       $(".plan_recruit_volunteers").closest('.question-slide').fadeIn()
       $(".plan_recruit_volunteers").fadeIn()
 
-
+  # when the user enters their role - fade in extra question if other
   $("#plan_role").change ->
     value = $(this).val()
-    # $('#plan_partnerships').empty()
-    # for role in ["","architect", "resident", "community group", "politician"]
-    #   $("#plan_partnerships").append("<option value='"+ role + "'>" + role + "</option>")
-    # $('#plan_partnerships').find("[value='" + value + "']" ).remove()
 
     if value == "other"
       $(".plan_role_other").closest('.question-slide').fadeIn()
@@ -61,6 +58,7 @@ ready = ->
       $(".plan_role_other").closest('.question-slide').fadeOut()
       $(".plan_role_other").fadeOut()
 
+  # when the user enters their scale - add options to oportunity
   $("#plan_scale").change ->
     checkScaleValue()
 
@@ -74,14 +72,16 @@ ready = ->
       when "large" then addOportunityOptions(c)
       when "extra large" then addOportunityOptions(c)
 
-  checkScaleValue()
-
   addOportunityOptions = (list) ->
     $("#plan_opportunity").empty()
     for size in list
       $("#plan_opportunity").append("<option value='"+ size + "'>" + size + "</option>")
 
+  # run checkScale on page Load
+  checkScaleValue()
 
+  # when user clicks continue - if the question was a dropdown check if empty
+  # if not empty show an alert
   $('.next-q').click ->
 
     if $(this).data('q-type') == 'select'
@@ -96,8 +96,8 @@ ready = ->
       $('.alert').remove
       $(this).closest('.question-slide').fadeOut()
 
-  $('.prev-q').click ->
-    $(this).closest('.question-slide').next().fadeIn()
+  # $('.prev-q').click ->
+  #   $(this).closest('.question-slide').next().fadeIn()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

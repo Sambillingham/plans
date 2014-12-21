@@ -16,13 +16,16 @@
     }
     .intro__continue {
         display: block;
-        width: 50px;
-        height: 50px;
-        background-color: #ccc;
         position: absolute;
         bottom: 20px;
         left: 50%;
         margin-left: -25px;
+        opacity: 0.6;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
     }
     .intro__overlay {
         z-index: -1;
@@ -83,47 +86,10 @@
     }
 }
 
-.parallax {
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-
-    .parallax__cta {
-        position: absolute;
-        background-color: #fff;
-        padding: 30px;
-        max-width: 70%;
-        width: 400px;
-
-        h2 {
-            margin: 0;
-        }
-
-        p {
-            @include font-size(16);
-        }
-    }
-    .parallax__cta--tl {
-        top: 30px;
-        left: 30px;
-    }
-    .parallax__cta--br {
-        bottom: 30px;
-        right: 30px;
-    }
-    .parallax__bg {
-        position: relative;
-        height: 200%;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        -webkit-perspective: 1000;
-    }
-}
-
 .project {
     padding: 100px 0;
     background-color: #fff;
+    text-align: center;
 
     .project__item {
         background: url(http://placehold.it/1200x400) center no-repeat;
@@ -147,4 +113,20 @@
             opacity: 0.8;
         }
     }
+    .projects__cta {
+        text-align: center;
+
+         a {
+            border-bottom: solid 2px #222;
+            color: #222;
+            @include font-size(14);
+            font-weight: 600;
+            text-transform: uppercase;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
 }

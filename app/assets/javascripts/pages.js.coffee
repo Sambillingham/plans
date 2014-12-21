@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
+readyPages = ->
 
     # Waypoints
     adjustNav = (direction) ->
@@ -11,9 +11,14 @@ ready = ->
         else
             $('.js-navbar').css('top','-75px')
 
-    $('#about').waypoint( adjustNav , { offset : '25%' } )
+    if $(".intro")[0]
+        $('#about').waypoint( adjustNav , { offset : '25%' } )
+    else
+        $('.js-navbar').css('top','0')
+
     # end waypoints
 
+    # Smooth scrolling
     smoothScroll = (event) ->
         href = $(this).attr("href");
         section = $(href).offset().top;
@@ -25,7 +30,9 @@ ready = ->
     $('.js-smooth-scroll').on('click', smoothScroll)
 
 
+    # Hide title on homepage
     $('.js-headline').delay(3000).fadeOut(500)
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+
+$(document).ready(readyPages)
+$(document).on('page:load', readyPages)
