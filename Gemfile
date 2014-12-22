@@ -51,4 +51,6 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'postmark-rails', '~> 0.8.0'
 
+gem "autoprefixer-rails"
+
 ruby '2.1.4'
