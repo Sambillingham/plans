@@ -12,6 +12,11 @@ class PlansController < ApplicationController
     def show
         @plan = Plan.find(params[:id])
         @output = plan_output
+        # change this to only send once
+        unless @plan.email.blank?
+            # PlanMailer.new_plan_email(@plan, @output).deliver
+            redirect_to plan_path(@plan)
+        end
     end
 
     def create

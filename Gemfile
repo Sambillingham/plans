@@ -13,6 +13,7 @@ group :production do
     gem 'pg'
     gem 'rails_12factor'
     gem 'unicorn'
+    gem 'postmark-rails', '~> 0.8.0'
 end
 
 # Use SCSS for stylesheets
@@ -49,7 +50,6 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
 gem 'devise'
-gem 'postmark-rails', '~> 0.8.0'
 
 gem "autoprefixer-rails"
 
