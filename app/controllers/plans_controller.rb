@@ -14,7 +14,7 @@ class PlansController < ApplicationController
         @output = plan_output
         # change this to only send once
         unless @plan.email.blank?
-            PlanMailer.new_plan_email(@plan, @output).deliver
+            # PlanMailer.new_plan_email(@plan, @output).deliver
         end
     end
 
