@@ -3,10 +3,11 @@
     background-color: #fff;
     z-index: 1030;
     position: fixed;
-    top: -75px;
+    top: -85px;
     width: 100%;
     transition: all 0.4s;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 2px 7px;
 
     .global-nav--inner {
         float: right;
@@ -120,6 +121,7 @@ footer {
     p {
         color: #fff;
         margin: 0;
+        @include font-size(16)
     }
 }
 

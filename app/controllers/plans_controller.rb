@@ -111,9 +111,8 @@ class PlansController < ApplicationController
         if @plan.partnerships == ""
             answers.push({:title => "Partnerships", :info => ["You should consider making partnerships with Architects, Residents, Community groups, and politicians to increase connetivity in the area"]})
         else
-            answers.push({:title => "Partnerships", :info => ["You could consider making additional partnerships"]})
             @partners = possible_partnerships - @plan.partnerships
-            answers.push({:title => "", :info => @partners })
+            answers.push({:title => "Partnerships", :info => @partners })
 
             if @plan.partnerships.include? "architect"
                 intervention_workshop += 1
@@ -131,18 +130,18 @@ class PlansController < ApplicationController
         projects = [data_collection, small_workshop, intervention_workshop, art_workship]
 
         # Testing scores for each
-        projects.each_with_index do |val, index|
-            case index
-            when 0
-                answers.push({:title => "Data Collection", :info => ["Score: #{val}"] })
-            when 1
-                answers.push({:title => "Small Workshop", :info => ["Score: #{val}"] })
-            when 2
-                answers.push({:title => "Intervention Workshop", :info => ["Score: #{val}"] })
-            when 3
-                answers.push({:title => "Arts Workshop", :info => ["Score: #{val}"] })
-            end
-        end
+        # projects.each_with_index do |val, index|
+        #     case index
+        #     when 0
+        #         answers.push({:title => "Data Collection", :info => ["Score: #{val}"] })
+        #     when 1
+        #         answers.push({:title => "Small Workshop", :info => ["Score: #{val}"] })
+        #     when 2
+        #         answers.push({:title => "Intervention Workshop", :info => ["Score: #{val}"] })
+        #     when 3
+        #         answers.push({:title => "Arts Workshop", :info => ["Score: #{val}"] })
+        #     end
+        # end
 
         max = projects.each_index.select { |i| projects[i] == projects.max }
 
@@ -150,13 +149,13 @@ class PlansController < ApplicationController
             # loop over the result with the biggest score incase multiple match
             case project
             when 0
-                answers.push({:title => "Data Collection", :info => ["info"] })
+                answers.push({:title => "Data Collection", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ea quidem officiis minima, nihil voluptas distinctio dolor commodi provident deleniti veritatis, dolorem laboriosam blanditiis ex. Consequuntur veritatis recusandae iure itaque."] })
             when 1
-                answers.push({:title => "Small Workshop", :info => ["info"] })
+                answers.push({:title => "Small Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vitae facere earum, ratione ducimus officia cupiditate odio illum sunt. Tempore nihil sint fuga quos suscipit voluptatum molestias explicabo. Excepturi, vero!"] })
             when 2
-                answers.push({:title => "Intervention Workshop", :info => ["info"] })
+                answers.push({:title => "Intervention Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut et pariatur commodi quos praesentium, saepe facere illo expedita consectetur porro eaque incidunt. Blanditiis perspiciatis quod repellendus, doloremque esse, inventore vero."] })
             when 3
-                answers.push({:title => "Arts Workshop", :info => ["info"] })
+                answers.push({:title => "Arts Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium et, dolore, fugiat placeat iure eligendi voluptas vero at delectus quaerat debitis, praesentium quae tempora cupiditate quidem! Quisquam quia aliquid, magni!"] })
             end
         end
 

@@ -1,29 +1,80 @@
-<%= @plan.inspect %>
-<div class="container">
 
-    <h2> Your Project</h2>
+<header class="parallax parallax--header js-parallax--header">
+    <div class="parallax__bg" style="background-image: url(<%= image_path('city.jpg')%>);"></div>
+    <div class="parallax__cta parallax__cta--mini parallax__cta--bl">
+        <h2>Co Design Project Plan</h2>
+    </div>
+</header>
 
-    <div class="row">
-        <div class="col-sm-12 col-md-6 well">
-            <% @output.each do |answer|%>
+<section class="plan">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <h2>Here is your suggested Approach</h2>
+                <% @output.each do |answer|%>
 
-                <h3><%= answer[:title] %></h3>
+                    <% unless answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
+                        <div class="answer">
+                            <h3><%= answer[:title] %></h3>
 
-                <% if answer[:info].length > 1 %>
+                            <% if answer[:info].length > 1 %>
 
-                    <% answer[:info].each do |bullet| %>
+                                <% if answer[:title] == "Partnerships" %>
+                                    <p>You could consider making additional partnerships</p>
+                                <% end %>
 
-                        <ul>
-                            <li><%= bullet %></li>
-                        </ul>
+                                <% answer[:info].each do |bullet| %>
+
+                                    <ul>
+                                        <li><%= image_tag 'bullet.png' %> <%= bullet %></li>
+                                    </ul>
+                                <% end %>
+
+                            <% else %>
+                                <p><%= answer[:info].first %></p>
+                            <% end %>
+                        </div>
                     <% end %>
 
-                <% else %>
-                    <p><%= answer[:info].first %></p>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="row">
+            <% @output.each do |answer|%>
+
+                <% if answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="answer__tile">
+                            <h3><%= answer[:title] %></h3>
+
+                            <% if answer[:info].length > 1 %>
+
+                                <% answer[:info].each do |bullet| %>
+
+                                    <ul>
+                                        <li><%= bullet %></li>
+                                    </ul>
+                                <% end %>
+
+                            <% else %>
+                                <p><%= answer[:info].first %></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto dolorem maxime iure ipsum quia assumenda nemo, ipsam nisi, aliquid nobis pariatur at sequi quidem in. Beatae consequatur nulla, tenetur suscipit.</p>
+                            <% end %>
+                        </div>
+                    </div>
                 <% end %>
 
             <% end %>
         </div>
-    </div>
 
-</div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-md-offset-3">
+                <div class="signoff">
+                    <h3>Good Luck With your project!<h3> <p> Let us know how it goes by tweeting us <a href="#">@codesigntoolkit</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -23,7 +23,7 @@ ready = ->
   # when past the first slide, fade in the restart button
   $('.create').click ->
     $('.restart-plan').fadeIn()
-    $('.js-navbar').fadeOut(1000)
+    $('.js-navbar').css('top','-85px')
 
   # have the reset button refresh the page
   $('.restart-plan').click ->

@@ -46,3 +46,17 @@
   background-image: -webkit-linear-gradient($pos-degree $full); // Safari 5.1+, Chrome
   background-image: unquote("linear-gradient(#{$pos-spec}#{$full})");
 }
+
+
+@mixin breakpoint($size) {
+    @if $size == sm {
+        @media (min-width: 768px){
+            @content
+        }
+    }
+     @if $size == md {
+        @media (min-width: 992px){
+            @content
+        }
+    }
+}
