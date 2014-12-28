@@ -13,21 +13,10 @@
     <nav class="global-nav js-navbar" role="navigation">
 
         <div class="global-nav--inner" >
-
               <%= link_to "Home", root_path %>
               <%= link_to "About", about_path %>
               <%= link_to "Projects", projects_path %>
               <%= link_to "New Plan", new_plan_path, { :class => 'btn'} %>
-
-            <% unless admin_signed_in? %>
-                <!-- <%= link_to "Login", new_admin_session_path %> -->
-                <!-- <%= link_to "Sign up", new_admin_registration_path %> -->
-            <% end %>
-
-            <% if admin_signed_in? %>
-             <!--  <%= link_to "Dashboard", dashboard_path %>
-              <%= link_to :logout, destroy_admin_session_path, :method => :delete %> -->
-            <% end %>
           </ul>
         </div>
     </nav>
