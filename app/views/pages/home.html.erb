@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <p class="about__copy">The Co Design Toolkit is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ex voluptas, aliquam ea rerum! Numquam quis quaerat recusandae dolores cupiditate nam inventore minus quo saepe, nihil? Dolorem fugit nam voluptates.</p>
+                <p class="about__copy">The Collaborative Design Toolkit is a device to facilitate the engagement between communities, architects, politicians and other groups and individuals, who can collaborate to strive towards the development of a build environment which responds to the needs of the stakeholders it directly impacts. The Toolkit provides guidance on how to initiate conversations within a community, which can be used to create interest groups and guide future development.</p>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="parallax__bg" style="background-image: url(<%= image_path('hill.jpg')%>);"></div>
     <div class="parallax__cta parallax__cta--br">
         <h2>Toolkit</h2>
-        <p>Create Your own Co Design Plan. View online or have it emailed to you.</p>
+        <p>Create your own Collaborative Design plan. View online or have it emailed to you.</p>
         <%= link_to "Create a Plan", new_plan_path  %>
     </div>
 </section>
@@ -35,34 +35,28 @@
 <section class="project">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
+            <div class="col-xs-12 col-sm-6 col-lg-4">
                 <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('sky.jpg')%>);">
-                        <span>Project Title</span>
+                    <div class="project__item" style="background-image: url(<%= image_path('small.jpg')%>);">
+                        <span>Small Workshops</span>
                     </div>
                 </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5">
+            <div class="col-xs-12 col-sm-6 col-lg-4">
                 <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('bridge.jpg')%>);">
-                        <span>Project Title</span>
+                    <div class="project__item" style="background-image: url(<%= image_path('art.jpg')%>);">
+                        <span>Art Workshop</span>
                     </div>
                 </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
+            <div class="col-xs-12 col-sm-6 col-lg-4">
                 <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('bar.jpg')%>);">
-                        <span>Project Title</span>
+                    <div class="project__item" style="background-image: url(<%= image_path('arch.jpg')%>);">
+                        <span>Architecture Workshop</span>
                     </div>
                 </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5">
-                <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('church.jpg')%>);">
-                        <span>Project Title</span>
-                    </div>
-                </a>
-            </div>
+
             <div class="col-xs-12">
                 <div class="projects__cta">
                     <%= link_to "View All Projects", projects_path, {:class => ""} %>
@@ -76,7 +70,7 @@
     <div class="parallax__bg" style="background-image: url(<%= image_path('dan.jpg')%>);"></div>
     <div class="parallax__cta parallax__cta--tl">
         <h2>Dan Bagnall</h2>
-        <p>Architect, something and something else. Brain behind the Co Design Toolkit</p>
+        <p>The Toolkit is a prototypical device created as part of Dan Bagnall’s Master of Architecture dissertation.</p>
         <%= link_to "More about this project", about_path,{ :class=> "" }  %>
     </div>
 </section>
