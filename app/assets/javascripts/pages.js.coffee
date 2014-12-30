@@ -16,6 +16,14 @@ readyPages = ->
     else
         $('.js-navbar').css('top','0')
 
+    toggleBackToTop = (direction) ->
+        if direction == 'down'
+            console.log "goo"
+            $('.js-back-to-top').fadeIn()
+        else
+            $('.js-back-to-top').fadeOut()
+
+    $('.js-projects-waypoints').waypoint( toggleBackToTop )
     # end waypoints
 
     # Smooth scrolling

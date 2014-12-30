@@ -137,4 +137,31 @@ footer {
     p {
         margin-bottom: 25px;
     }
+    .content-inner {
+        padding: 50px;
+        border: solid 2px $co-primary;
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #000;
+    color: #fff;
+    padding: 6px 9px;
+    @include font-size(11);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:hover,
+    &:active,
+    &:visited {
+        text-decoration: none;
+        color: #fff;
+    }
 }

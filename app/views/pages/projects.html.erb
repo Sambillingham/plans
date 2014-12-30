@@ -1,5 +1,5 @@
 
-<header class="parallax parallax--header js-parallax--header">
+<header id="top" class="parallax parallax--header js-parallax--header">
     <div class="parallax__bg" style="background-image: url(<%= image_path('old.jpg')%>);"></div>
     <div class="parallax__cta parallax__cta--mini parallax__cta--bl">
         <h2>Co Design Projects</h2>
@@ -7,48 +7,29 @@
 </header>
 
 
-<section class="project">
+<section class="project js-projects-waypoints">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
-                <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('sky.jpg')%>);">
-                        <span>Project Title</span>
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <a href="#small" class="js-smooth-scroll">
+                    <div class="project__item" style="background-image: url(<%= image_path('small.jpg')%>);">
+                        <span>Small Workshops</span>
                     </div>
                 </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5">
-                <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('bridge.jpg')%>);">
-                        <span>Project Title</span>
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <a href="#art" class="js-smooth-scroll">
+                    <div class="project__item" style="background-image: url(<%= image_path('art.jpg')%>);">
+                        <span>Art Workshop</span>
                     </div>
                 </a>
             </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
-                <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('bar.jpg')%>);">
-                        <span>Project Title</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5">
-                <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('church.jpg')%>);">
-                        <span>Project Title</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
-                <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('bar.jpg')%>);">
-                        <span>Project Title</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-lg-5">
-                <a href="<%= projects_path %>">
-                    <div class="project__item" style="background-image: url(<%= image_path('church.jpg')%>);">
-                        <span>Project Title</span>
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <a href="#arch" class="js-smooth-scroll">
+                    <div class="project__item" style="background-image: url(<%= image_path('arch.jpg')%>);">
+                        <span>Architecture Workshop</span>
                     </div>
                 </a>
             </div>
@@ -56,3 +37,98 @@
         </div>
     </div>
 </section>
+
+<section id="small" class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 content-inner">
+                <h2>Small Workshop</h2>
+
+                <h3>What?</h3>
+
+                <p>Small workshops can be conducted through a variety of methods, but the purpose should be to engage stakeholders within a two-way conversation, unlike traditional consultation which is generally one-way. Tasks such as: wishing trees, draw your neighbourhood, traffic light analysis are all suitable.</p>
+
+                <h3>Why?</h3>
+
+                <p>These types of workshops are well suited for data collection, to demonstrate a need for projects. They are also perfect for creating connections and forming partnerships within communities. However, all engagement must be conducted considerately to ensure the connections established are meaningful. It is important not to deter stakeholders during this process, which could have a negative impact upon future engagement.</p>
+
+                <h3>When?</h3>
+
+                <p>Smaller workshops can be conducted at anytime within a project, however they are most suitable in the early stages of a project, when there is a greater need for creating connections and partnerships between groups.</p>
+
+                <h3>Who?</h3>
+
+                <p>These workshops do not require specialists, unlike other workshops. However it is important to ensure those conducted the workshops are engaging and enthusiastic in order to achieve the best outcomes.</p>
+
+                <h3>How?</h3>
+
+                <p>Small workshops are highly flexible, they can require as much or as little resources as are available. Workshops can be held in a variety of spaces, included on the streets if there are suitable means to do so. They do not require many materials, only paper, pens and possibly some modelling materials, therefore the budget required for these projects can be quite low.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="art" class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 content-inner">
+                <h2>Art Workshop</h2>
+
+                <h3>What?</h3>
+
+                <p>These workshops are led by artists who through the medium of art are able to engage conversations about issues or needs within an area. The work produced during the events does not have to represent the particular issues or needs, instead it is the conversations that take place simultaneously which are important.</p>
+
+                <h3>Why?</h3>
+
+                <p>Building confidence and opening up new opportunities, creating conversations.</p>
+
+                <h3>When?</h3>
+
+                <p>Art workshops are best conducted when facilitators have an understanding of the area they are working in, so the workshops do not deter prospective participants but instead build upon connections and deeper conversations..</p>
+
+                <h3>Who?</h3>
+
+                <p>Careful consideration should be made over the artist who will lead the engagement, they must be able to engage with those from a non-art background. They must also be able to use the process of making art to push forward a dialogue. It would be beneficial to partner with local artists who have a direct connection to the area, identifying these individuals could be achieved through desktop research or through prior engagement with stakeholders.</p>
+
+                <h3>How?</h3>
+
+                <p>Art workshops can require a large amount of materials and equipment, you budget must allow for these, prior discussion with artist(s) should be sought to identify what is needed. Additional budget must also be allowed for paying the artist for their time. These events can be held over one day to a number of days, dependant on the scale of your project and area. They will require a space to conduct the engagement, which ideally would be located within the area of concern.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="arch" class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 content-inner">
+                <h2>Architecture Workshop</h2>
+
+                <h3>What?</h3>
+
+                <p>Architecture workshops consist of engagement based around architectural centrepieces or models. Participants can be engaged through design and making.</p>
+
+                <h3>Why?</h3>
+
+                <p>The use of architectural structures or models allow engagement to be framed. They provide opportunities for engagement outside the traditional methods, which may have already fatigued participants. This type of project lends itself to questioning the spaces and environments which affect stakeholders.</p>
+
+                <h3>When?</h3>
+
+                <p>These types of projects are best conducted when the facilitators have a good knowledge of the area. If the area is unknown to facilitators it may be beneficial to run a smaller engagement workshop to create a presence within the area.</p>
+
+                <h3>Who?</h3>
+
+                <p>To conduct an architecture style workshop it would be advisable to partner with a representative from within the architectural profession. This would ideally be an individual or group from a local architecture practice or a school of architecture, who are able to enthuse participants to engage.</p>
+
+                <h3>How?</h3>
+
+                <p>Architecture workshops require a higher amount of resources when compared to other types of engagement, which must be considered when preparing a project budget. Firstly consideration of materials and tools needed to construct a centrepiece or architectural models must be made, also consider additional time needed to carry out this process. This type of project we require volunteers to assist with both construction and engagement. Finally, in most cases this type of project will need to be based at a location (as well as space to store materials and structures).</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<a href="#top" class="back-to-top js-back-to-top js-smooth-scroll">Back to Top</a>
