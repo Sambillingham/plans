@@ -41,6 +41,19 @@ readyPages = ->
     # Hide title on homepage
     $('.js-headline').delay(3000).fadeOut(500)
 
+    # Lightbox
+    #  click on image open lightbox
+    $('.content-inner img').click ->
+        imageSrc = $(this).attr("src")
+
+        $('.js-lightbox img').attr("src",imageSrc)
+
+        $('.js-lightbox').fadeIn()
+
+    $('.js-lightbox').click ->
+        $(this).fadeOut()
+
+    # end lightbox
 
 $(document).ready(readyPages)
 $(document).on('page:load', readyPages)
