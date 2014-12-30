@@ -48,7 +48,6 @@ class PlansController < ApplicationController
 
     def plan_output
         answers = []
-        data_collection = 0
         small_workshop = 0
         intervention_workshop = 0
         art_workship = 0
@@ -63,7 +62,6 @@ class PlansController < ApplicationController
 
         case @plan.timescale
         when 1
-            data_collection += 1
             small_workshop += 1
             answers.push({:title => "Timescale", :info => ["smaller scale suggestion", "Strict budget, no additional funding", "Suggest longer timescale"]})
         when 6
@@ -82,7 +80,6 @@ class PlansController < ApplicationController
         when "familiar"
             answers.push({:title => "Familiarity", :info => ["Suggest improving/building upon connections"]})
         when "unfamiliar"
-            data_collection += 1
             small_workshop += 1
             answers.push({:title => "Familiarity", :info => ["Creating new connections will be important to ensuring success", "Suggest smaller projects leading to more projects", "long time span will be necessary"]})
         end
@@ -107,7 +104,6 @@ class PlansController < ApplicationController
                 art_workship += 1
                 answers.push({:title => "People", :info => ["Suggest methods to use to recruit people"]})
             else
-                data_collection += 1
                 small_workshop += 1
                 answers.push({:title => "People", :info => ["Question if they have necessary \"people power\""]})
             end
@@ -135,18 +131,16 @@ class PlansController < ApplicationController
             art_workship += 1
         end
 
-        projects = [data_collection, small_workshop, intervention_workshop, art_workship]
+        projects = [ small_workshop, intervention_workshop, art_workship]
 
         # Testing scores for each
         # projects.each_with_index do |val, index|
         #     case index
         #     when 0
-        #         answers.push({:title => "Data Collection", :info => ["Score: #{val}"] })
-        #     when 1
         #         answers.push({:title => "Small Workshop", :info => ["Score: #{val}"] })
+        #     when 1
+        #         answers.push({:title => "Architecture Workshop", :info => ["Score: #{val}"] })
         #     when 2
-        #         answers.push({:title => "Intervention Workshop", :info => ["Score: #{val}"] })
-        #     when 3
         #         answers.push({:title => "Arts Workshop", :info => ["Score: #{val}"] })
         #     end
         # end
@@ -157,12 +151,10 @@ class PlansController < ApplicationController
             # loop over the result with the biggest score incase multiple match
             case project
             when 0
-                answers.push({:title => "Data Collection", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ea quidem officiis minima, nihil voluptas distinctio dolor commodi provident deleniti veritatis, dolorem laboriosam blanditiis ex. Consequuntur veritatis recusandae iure itaque."] })
-            when 1
                 answers.push({:title => "Small Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vitae facere earum, ratione ducimus officia cupiditate odio illum sunt. Tempore nihil sint fuga quos suscipit voluptatum molestias explicabo. Excepturi, vero!"] })
+            when 1
+                answers.push({:title => "Architecture Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut et pariatur commodi quos praesentium, saepe facere illo expedita consectetur porro eaque incidunt. Blanditiis perspiciatis quod repellendus, doloremque esse, inventore vero."] })
             when 2
-                answers.push({:title => "Intervention Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut et pariatur commodi quos praesentium, saepe facere illo expedita consectetur porro eaque incidunt. Blanditiis perspiciatis quod repellendus, doloremque esse, inventore vero."] })
-            when 3
                 answers.push({:title => "Arts Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium et, dolore, fugiat placeat iure eligendi voluptas vero at delectus quaerat debitis, praesentium quae tempora cupiditate quidem! Quisquam quia aliquid, magni!"] })
             end
         end
