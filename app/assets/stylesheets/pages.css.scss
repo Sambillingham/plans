@@ -101,6 +101,8 @@
         }
     }
     .parallax__bg {
+        background-position: 50% 50%;
+        background-size: cover;
         position: relative;
         height: 200%;
         -webkit-transform: translateZ(0);

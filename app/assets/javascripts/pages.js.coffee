@@ -39,7 +39,7 @@ readyPages = ->
 
 
     # Hide title on homepage
-    $('.js-headline').delay(3000).fadeOut(500)
+    # $('.js-headline').delay(3000).fadeOut(500)
 
     # Lightbox
     #  click on image open lightbox
