@@ -1,9 +1,9 @@
 class PlanMailer < ActionMailer::Base
-  default from: "\"Co Design Toolkit\" <newplan@codesigntoolkit.com>"
+  default from: "\"Collaborative Design Toolkit\" <info@collaborativedesign.net>"
 
   def new_plan_email(plan, output)
     @plan = plan
     @output = output
-    mail to: @plan.email, subject: "Your New Co Design Plan"
+    mail to: @plan.email, subject: "Your New Collaborative Design Plan"
   end
 end
