@@ -17,6 +17,6 @@ class PagesController < ApplicationController
             flash[:danger] = "You need to be an admin user to view this page"
             redirect_to root_path
         end
-        @plans = Plan.all
+        @plans = Plan.all.order('created_at DESC')
     end
 end
