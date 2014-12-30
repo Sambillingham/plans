@@ -19,7 +19,7 @@ form {
     overflow-y: scroll;
 }
 .question-inner {
-    padding-top: 100px;
+    padding-top: 150px;
     width: 50%;
     margin: 0 auto;
 }
@@ -60,6 +60,12 @@ form {
 }
 .btn-submit {
     margin: 100px auto 0 auto;
+    background-color: $co-primary;
+
+    &:hover,
+    &:active {
+        background-color: darken($co-primary, 10%);
+    }
 }
 .form-control:focus {
     border: solid 2px #000;
@@ -105,8 +111,12 @@ label {
     cursor: pointer;
     font-weight: 700;
     display: none;
+    @include font-size(14);
 }
 
+#plan_email_user_plan {
+    margin-top: -30px;
+}
 
 .extra-q {
     display: none;
