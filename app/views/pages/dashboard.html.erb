@@ -11,7 +11,9 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>copy sent?</th>
+                    <th>want email?</th>
+                    <th>email sent</th>
+
                     <th>Role</th>
                     <th>Partnerships</th>
                     <th>Scale</th>
@@ -32,6 +34,8 @@
                         <td><%= plan.name %></td>
                         <td><%= plan.email %></td>
                         <td><%= plan.email_user_plan %></td>
+                        <td><%= plan.email_sent %></td>
+
                         <td><%= plan.role %></td>
                         <td><ul>
                             <% plan.partnerships.each do |partner| %>

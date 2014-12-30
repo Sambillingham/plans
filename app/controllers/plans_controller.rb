@@ -12,9 +12,13 @@ class PlansController < ApplicationController
     def show
         @plan = Plan.find(params[:id])
         @output = plan_output
-        # change this to only send once
+
         unless @plan.email.blank?
-            # PlanMailer.new_plan_email(@plan, @output).deliver
+            if @plan.email_user_plan and @plan.email_sent == false
+                PlanMailer.new_plan_email(@plan, @output).deliver
+                @plan.email_sent = true
+                @plan.save
+            end
         end
     end
 
