@@ -66,10 +66,10 @@ ready = ->
     b = ["", "Providing Access", "Addressing Safety", "Improvement/Refurbishment", "New Build", "Engaging Local Stakeholders"]
     c = ["", "Masterplanning", "Addressing Social Issues", "Addressing Safety", "Questioning Policy", "Engaging Stakeholders"]
     switch $("#plan_scale").val()
-      when "small" then addOportunityOptions(a)
-      when "medium" then addOportunityOptions(b)
-      when "large" then addOportunityOptions(c)
-      when "extra large" then addOportunityOptions(c)
+      when "small (furniture scale)" then addOportunityOptions(a)
+      when "medium (building scale)" then addOportunityOptions(b)
+      when "large (street scale)" then addOportunityOptions(c)
+      when "extra large (neighbourhood scale)" then addOportunityOptions(c)
 
   addOportunityOptions = (list) ->
     $("#plan_opportunity").empty()

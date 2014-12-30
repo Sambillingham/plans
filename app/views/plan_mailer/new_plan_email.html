@@ -11,51 +11,26 @@
 
         <% @output.each do |answer|%>
 
-            <% unless answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
-                <h3><%= answer[:title] %></h3>
+            <h3><%= answer[:title] %></h3>
 
-                <% if answer[:info].length > 1 %>
+            <% if answer[:info].length > 1 %>
 
-                    <% if answer[:title] == "Partnerships" %>
-                        <p>You could consider making additional partnerships</p>
-                    <% end %>
-
-                    <% answer[:info].each do |bullet| %>
-
-                        <ul>
-                            <li> <%= bullet %></li>
-                        </ul>
-                    <% end %>
-
-                <% else %>
-                    <p><%= answer[:info].first %></p>
+                <% if answer[:title] == "Partnerships" %>
+                    <p>You could consider making additional partnerships</p>
                 <% end %>
+
+                <% answer[:info].each do |bullet| %>
+
+                    <ul>
+                        <li> <%= bullet %></li>
+                    </ul>
+                <% end %>
+
+            <% else %>
+                <p><%= answer[:info].first %></p>
             <% end %>
 
         <% end %>
-
-        <% @output.each do |answer|%>
-
-                <% if answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
-
-                    <h3><%= answer[:title] %></h3>
-
-                    <% if answer[:info].length > 1 %>
-
-                        <% answer[:info].each do |bullet| %>
-
-                            <ul>
-                                <li><%= bullet %></li>
-                            </ul>
-                        <% end %>
-
-                    <% else %>
-                        <p><%= answer[:info].first %></p>
-                    <% end %>
-                <% end %>
-
-            <% end %>
-        </div>
 
         <h3 style="text-align: center;">Good Luck With your project!<h3> <p style="text-align: center;"> Let us know how it goes by tweeting us <a href="#">@codesigntoolkit</a></p>
 
