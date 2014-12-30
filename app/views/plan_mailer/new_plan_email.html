@@ -4,9 +4,61 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hey, <%= @plan.name %></h1>
-    <p>
-      Your plan: <%= @plan.email %> <br>
-    </p>
+    <div class="content" style="width:80%; max-width: 90%; margin: 0 auto; border: solid 2px  #6385BF; padding: 20px;">
+        <h1>Hey, <%= @plan.name %></h1>
+
+        <h2>Here is your suggested Approach</h2>
+
+        <% @output.each do |answer|%>
+
+            <% unless answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
+                <h3><%= answer[:title] %></h3>
+
+                <% if answer[:info].length > 1 %>
+
+                    <% if answer[:title] == "Partnerships" %>
+                        <p>You could consider making additional partnerships</p>
+                    <% end %>
+
+                    <% answer[:info].each do |bullet| %>
+
+                        <ul>
+                            <li> <%= bullet %></li>
+                        </ul>
+                    <% end %>
+
+                <% else %>
+                    <p><%= answer[:info].first %></p>
+                <% end %>
+            <% end %>
+
+        <% end %>
+
+        <% @output.each do |answer|%>
+
+                <% if answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
+
+                    <h3><%= answer[:title] %></h3>
+
+                    <% if answer[:info].length > 1 %>
+
+                        <% answer[:info].each do |bullet| %>
+
+                            <ul>
+                                <li><%= bullet %></li>
+                            </ul>
+                        <% end %>
+
+                    <% else %>
+                        <p><%= answer[:info].first %></p>
+                    <% end %>
+                <% end %>
+
+            <% end %>
+        </div>
+
+        <h3 style="text-align: center;">Good Luck With your project!<h3> <p style="text-align: center;"> Let us know how it goes by tweeting us <a href="#">@codesigntoolkit</a></p>
+
+    </div>
   </body>
 </html>

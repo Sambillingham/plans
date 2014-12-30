@@ -1,4 +1,47 @@
 Hey, <%= @plan.name %>
 ===============================================
 
-Your plan: @plan.email
+Here is your suggested Approach
+
+<% @output.each do |answer|%>
+
+    <% unless answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
+        <%= answer[:title] %>
+
+        <% if answer[:info].length > 1 %>
+
+            <% if answer[:title] == "Partnerships" %>
+                You could consider making additional partnerships
+            <% end %>
+
+            <% answer[:info].each do |bullet| %>
+                <%= bullet %>
+            <% end %>
+
+        <% else %>
+            <%= answer[:info].first %>
+        <% end %>
+    <% end %>
+
+<% end %>
+
+<% @output.each do |answer|%>
+
+    <% if answer[:title] == "Funding" || answer[:title] == "People" || answer[:title] == "Space" %>
+
+        <%= answer[:title] %>
+
+        <% if answer[:info].length > 1 %>
+            <% answer[:info].each do |bullet| %>
+                    <li><%= bullet %></li>
+            <% end %>
+        <% else %>
+            <%= answer[:info].first %>
+        <% end %>
+    <% end %>
+
+<% end %>
+
+Good Luck With your project!
+
+Let us know how it goes by tweeting us @codesigntoolkit

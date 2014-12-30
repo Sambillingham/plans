@@ -60,11 +60,14 @@ form {
 }
 .btn-submit {
     margin: 100px auto 0 auto;
-    background-color: $co-primary;
+    background-color: $co-primary !important;
+    color: #fff;
+    outline: 0;
 
     &:hover,
-    &:active {
-        background-color: darken($co-primary, 10%);
+    &:active,
+    &:visited {
+        background-color: darken($co-primary, 10%) !important;
     }
 }
 .form-control:focus {
