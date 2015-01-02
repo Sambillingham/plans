@@ -21,6 +21,18 @@ Here is your suggested Approach
         <%= answer[:info].first %>
     <% end %>
 
+    <% if answer[:title] == "Funding" %>
+
+        Below are a number of ideas for obtaining funding:
+
+        Corporate fundraising - sponsorship from businesses
+        Donor fundraising - sponsorship from individuals
+        Community fundraising - small scale initiatives by community members selling products or services, e.g. cake sale.
+        Digital fundraising - targeting a non-local audience, e.g. crowdfunding, social media.
+        Grant fundraising - local or national trust funds
+
+    <% end %>
+
 <% end %>
 
 Good Luck With your project!

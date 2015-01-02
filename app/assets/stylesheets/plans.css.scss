@@ -146,6 +146,11 @@ label {
         padding: 20px;
         min-height: 380px;
         background-color: #FBFBFB;
+
+        ul li {
+            @include font-size(13);
+            @include line-height(22);
+        }
     }
     h3 {
         @include font-size(24);

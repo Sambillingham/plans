@@ -61,6 +61,20 @@
                             <% else %>
                                 <p><%= answer[:info].first %></p>
                             <% end %>
+
+                            <% if answer[:title] == "Funding" %>
+
+                                <p>Below are a number of ideas for obtaining funding:</p>
+
+                                <ul>
+                                    <li><strong>Corporate fundraising</strong> - sponsorship from businesses</li>
+                                    <li><strong>Donor fundraising </strong> - sponsorship from individuals</li>
+                                    <li><strong>Community fundraising</strong>  - small scale initiatives by community members selling products or services, e.g. cake sale.</li>
+                                    <li><strong>Digital fundraising</strong>  - targeting a non-local audience, e.g. crowdfunding, social media.</li>
+                                    <li><strong>Grant fundraising</strong>  - local or national trust funds</li>
+                                </ul>
+                            <% end %>
+
                         </div>
                     </div>
                 <% end %>
@@ -71,7 +85,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 col-md-offset-3">
                 <div class="signoff">
-                    <h3>Good Luck With your project!<h3> <p> Let us know how it goes by tweeting us <a href="#">@codesigntoolkit</a></p>
+                    <h3>Good luck with your project!<h3> <p> Let us know how it goes by tweeting us <a href="#">@codesigntoolkit</a></p>
                 </div>
             </div>
         </div>

@@ -109,21 +109,21 @@ class PlansController < ApplicationController
 
         unless @plan.resources.include? "funding"
             if @plan.funding_how == false
-                answers.push({:title => "Funding", :info => ["provide funding info"]})
+                answers.push({:title => "Funding", :info => ["The amount of funded required is determined by the scale of the engagement. When applying for funding it is important to compile a budget, this must be accurate being careful not to under or over estimate, as this could impact the success of the outcome.suggested Project: "]})
             end
         end
         unless @plan.resources.include? "people"
             if @plan.recruit_volunteers == true
                 intervention_workshop += 1
                 art_workship += 1
-                answers.push({:title => "People", :info => ["Suggest methods to use to recruit people"]})
+                answers.push({:title => "People", :info => ["Volunteers are vital to ensure your project is a success. Depending on the scale of your project you will likely need the assistance of volunteers. Local residents who have a strong investment within the project or participants from previous engagement would be ideal volunteers. Consider volunteers expenses within the budget."]})
             else
                 small_workshop += 1
-                answers.push({:title => "People", :info => ["Question if they have necessary \"people power\""]})
+                answers.push({:title => "People", :info => ["Volunteers are vital to ensure your project is a success. Depending on the scale of your project you will likely need the assistance of volunteers. Local residents who have a strong investment within the project or participants from previous engagement would be ideal volunteers. Consider volunteers expenses within the budget."]})
             end
         end
         unless @plan.resources.include? "space"
-            answers.push({:title => "Space", :info => ["You need a space for your project"]})
+            answers.push({:title => "Space", :info => ["You are likely to require a space to conduct the workshop, ideally this will be located at or near the space you are focusing on. If this is not possible then you could use a local community centre, alternatively you could consider a ‘roaming’ project which is able to move around. Be mindful to set aside a portion of the budget for hiring space if necessary."]})
         end
 
         if @plan.partnerships == ""
@@ -165,11 +165,11 @@ class PlansController < ApplicationController
             # loop over the result with the biggest score incase multiple match
             case project
             when 0
-                answers.push({:title => "Small Workshop", :info => ["Small workshops can be conducted through a variety of methods, but the purpose should be to engage stakeholders within a two-way conversation, unlike traditional consultation which is generally one-way. Tasks such as: wishing trees, draw your neighbourhood, traffic light analysis are all suitable."] })
+                answers.push({:title => "Suggested Project : Small Workshop", :info => ["Small workshops can be conducted through a variety of methods, but the purpose should be to engage stakeholders within a two-way conversation, unlike traditional consultation which is generally one-way. Tasks such as: wishing trees, draw your neighbourhood, traffic light analysis are all suitable."] })
             when 1
-                answers.push({:title => "Architecture Workshop", :info => ["These workshops consist of engagement based around architectural centrepieces or models. Participants can be engaged through design and making."] })
+                answers.push({:title => "Suggested Project : Architecture Workshop", :info => ["These workshops consist of engagement based around architectural centrepieces or models. Participants can be engaged through design and making."] })
             when 2
-                answers.push({:title => "Arts Workshop", :info => ["These workshops are led by artists who through the medium of art are able to engage conversations about issues or needs within an area. The work produced during the events does not have to represent the particular issues or needs, instead it is the conversations that take place simultaneously which are important. It is important."] })
+                answers.push({:title => "Suggested Project : Arts Workshop", :info => ["These workshops are led by artists who through the medium of art are able to engage conversations about issues or needs within an area. The work produced during the events does not have to represent the particular issues or needs, instead it is the conversations that take place simultaneously which are important. It is important."] })
             end
         end
 
