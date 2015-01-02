@@ -77,34 +77,34 @@ class PlansController < ApplicationController
         case @plan.timescale
         when 1
             small_workshop += 1
-            answers.push({:title => "Timescale", :info => ["smaller scale suggestion", "Strict budget, no additional funding", "Suggest longer timescale"]})
+            answers.push({:title => "Timescale", :info => ["Due to the short time constraints of your project it is vital you set clear targets and deadlines to ensure the necessary processes are undertaken. In order to create connections during this short time engagement must be focused, and participants clearly advised of the purpose and outcome."]})
         when 6
             intervention_workshop += 1
             art_workship += 1
-            answers.push({:title => "Timescale", :info => ["May be able to get aditional funding depending on timescale", "Enough time to engage multiple parties"]})
+            answers.push({:title => "Timescale", :info => ["Longer engagement can be achieved due to larger timescales. The majority of time should be spent preparing for the engagement, acquiring funding etc. If time allows, a smaller scale workshop could be conducted, this would increase your presence within the area prior to the main engagement."]})
         when 12
             intervention_workshop += 1
             art_workship += 1
-            answers.push({:title => "Timescale", :info => ["Advise Long projects must have planned series on engagement in orfer to maintain interest", "Good chance to gain outside funding", "make sure to create string connections and relationships during this time", "Good amount of time to conduct large scale project"]})
+            answers.push({:title => "Timescale", :info => ["As this project is going to run over a long time frame it is important to set achievable goals during this time, this will allow the project to continue developing and not stall unnecessarily. Longer projects allow for deeper connections to be formed during engagement. Longer time scales allow for multiple workshops to be conducted if possible."]})
         end
 
         case @plan.familiarity
         when "very"
-            answers.push({:title => "Familiarity", :info => ["Make use of connections that you are likely to have"]})
+            answers.push({:title => "Familiarity", :info => ["Use your great knowledge of the area to build upon existing connections."]})
         when "familiar"
-            answers.push({:title => "Familiarity", :info => ["Suggest improving/building upon connections"]})
+            answers.push({:title => "Familiarity", :info => ["Consider conducted smaller workshops if time allows. This will help you develop connections with local stakeholders and gain a deeper understanding of the area."]})
         when "unfamiliar"
             small_workshop += 1
-            answers.push({:title => "Familiarity", :info => ["Creating new connections will be important to ensuring success", "Suggest smaller projects leading to more projects", "long time span will be necessary"]})
+            answers.push({:title => "Familiarity", :info => ["Conduct smaller workshops if time allows. This will help you develop connections with local stakeholders and gain a deeper understanding of the area."]})
         end
 
         case @plan.past_projects
         when "yes"
-            answers.push({:title => "Past Projects", :info => ["Research previous projects to understand success and failures", "be aware that those you are engaging may have consultation fatigue"]})
+            answers.push({:title => "Past Projects", :info => ["As previous projects have been conducted you should evaluate their successes and failures, this will help you improve your project. You should also be aware some participants may act negatively towards your project due to consultation fatigue. If so, ensure you are honest with your participants and conduct a workshop which engages on a more personal level than previously."]})
         when "no"
-            answers.push({:title => "Past Projects", :info => ["Opportunity to impact upon area and create a great first impression"]})
+            answers.push({:title => "Past Projects", :info => ["As no previous projects have been conducted you have a chance to create a great first impression and impact upon the area."]})
         when "don\'t know"
-            answers.push({ :title => "Past Projects", :info => ["Conduct further research to find out."]})
+            answers.push({ :title => "Past Projects", :info => ["Knowledge of previous projects which have been conducted in the area may influence your project. Understanding if they were successful, or not may offer opportunities to build upon or change the methods of previous engagement. Therefore you should consider researching if previous projects have been conducted."]})
         end
 
         unless @plan.resources.include? "funding"
@@ -127,7 +127,7 @@ class PlansController < ApplicationController
         end
 
         if @plan.partnerships == ""
-            answers.push({:title => "Partnerships", :info => ["You should consider making partnerships with Architects, Residents, Community groups, and politicians to increase connetivity in the area"]})
+            answers.push({:title => "Partnerships", :info => ["If would be advisable to make the following connections to improve the success of your project: Architects, Residents, Local Businesses, Local Government, Community groups, Politicians and Arts groups."]})
         else
             @partners = possible_partnerships - @plan.partnerships
             answers.push({:title => "Partnerships", :info => @partners })
@@ -165,11 +165,11 @@ class PlansController < ApplicationController
             # loop over the result with the biggest score incase multiple match
             case project
             when 0
-                answers.push({:title => "Small Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque vitae facere earum, ratione ducimus officia cupiditate odio illum sunt. Tempore nihil sint fuga quos suscipit voluptatum molestias explicabo. Excepturi, vero!"] })
+                answers.push({:title => "Small Workshop", :info => ["Small workshops can be conducted through a variety of methods, but the purpose should be to engage stakeholders within a two-way conversation, unlike traditional consultation which is generally one-way. Tasks such as: wishing trees, draw your neighbourhood, traffic light analysis are all suitable."] })
             when 1
-                answers.push({:title => "Architecture Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut et pariatur commodi quos praesentium, saepe facere illo expedita consectetur porro eaque incidunt. Blanditiis perspiciatis quod repellendus, doloremque esse, inventore vero."] })
+                answers.push({:title => "Architecture Workshop", :info => ["These workshops consist of engagement based around architectural centrepieces or models. Participants can be engaged through design and making."] })
             when 2
-                answers.push({:title => "Arts Workshop", :info => ["info... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium et, dolore, fugiat placeat iure eligendi voluptas vero at delectus quaerat debitis, praesentium quae tempora cupiditate quidem! Quisquam quia aliquid, magni!"] })
+                answers.push({:title => "Arts Workshop", :info => ["These workshops are led by artists who through the medium of art are able to engage conversations about issues or needs within an area. The work produced during the events does not have to represent the particular issues or needs, instead it is the conversations that take place simultaneously which are important. It is important."] })
             end
         end
 
