@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Co Design toolkit</title>
-    <meta name="description" content="">
+    <title>Collaborative Design toolkit</title>
+    <meta name="description" content="The Collaborative Design Toolkit is a device to facilitate the engagement between communities, architects, politicians and other groups and individual.">
     <meta name="viewport" content="width=device-width">
 
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
 </head>
+
 <body>
     <nav class="global-nav js-navbar" role="navigation">
 
@@ -21,14 +22,7 @@
         </div>
     </nav>
 
-<!--     <% flash.each do |k,v| %>
-        <div class="alert alert-<%= k %>">
-            <p><%= v %></p>
-        </div>
-    <% end %> -->
-
     <%= yield %>
-
 
     <footer>
         <p> 2014 &copy; Dan Bagnall, Collaborative Design Toolkit </p>
