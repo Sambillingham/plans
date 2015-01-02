@@ -58,6 +58,20 @@ class PlansController < ApplicationController
         when "Engaging Stakeholders"
             intervention_workshop += 1
             art_workship += 1
+        when "Addressing Social Issues"
+            small_workshop += 1
+        when "Design and Construction"
+            intervention_workshop += 1
+        when "Improvement/Refurbishment"
+            intervention_workshop += 1
+        when "Masterplanning"
+            small_workshop += 1
+            intervention_workshop += 1
+        when "New Build"
+            intervention_workshop += 1
+        when "Providing Access"
+            intervention_workshop += 1
+            art_workship += 1
         end
 
         case @plan.timescale
