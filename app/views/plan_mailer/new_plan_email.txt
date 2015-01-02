@@ -10,7 +10,7 @@ Here is your suggested Approach
     <% if answer[:info].length > 1 %>
 
         <% if answer[:title] == "Partnerships" %>
-            You could consider making additional partnerships
+            If would be advisable to make the following connections to improve the success of your project:
         <% end %>
 
         <% answer[:info].each do |bullet| %>
